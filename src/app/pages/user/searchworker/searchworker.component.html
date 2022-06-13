@@ -1,0 +1,98 @@
+<section class="fav-folder">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row justify-content-between tabset">
+                <div class="col-md-12">
+                    <div>
+                                <div class="row justify-content-between folder-name no-gutters">
+                                    <div class="mr-5">
+                                        <form [formGroup]="searchworker" (ngSubmit)= "workerSearch()"  class="datatype">
+                                            <div>
+                                                <input 
+                                                type="text"
+                                                maxlength="100"
+                                                class="searchform"
+                                                placeholder="Search your iworker"
+                                                (keydown.space)="$event.preventDefault()"
+                                                formControlName="search"
+                                                >
+                                            </div>
+                                        </form>
+                                        <div class="datatype">
+                                            <img src="assets/images/svg/search-1.svg" class="folder" />
+                                        </div>
+                                        <div class="datatype">
+                                            <p class="m-0"  style="cursor: pointer; font-size: 30px;" [routerLink]="['/user']" routerLinkActive="router-link-active"  >Cancel</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <label>Book your iWorkers</label>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <!-- <div class="row" *ngFor= "let data of workerlist">
+                                    <div class="col-lg-12 col-md-12 align-items-center justify-content-between details d-flex flex-wrap">
+                                        <div class="clearfix">
+                                            
+                                            <div class="datatype">
+                                                <div>
+                                                    <h1>
+                                                        {{data?.type | titlecase}}
+                                                    </h1> 
+                                                </div>
+                                                <div>
+                                                    <h4 class="m-0">
+                                                    {{data?.building}},{{data?.show_address}},{{data?.suburb}},{{data?.city}}
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  -->
+                                <div class="fav-card  mr-2" *ngFor="let elements of workerlist
+                                | paginate
+                                : {
+                                    itemsPerPage: limit,
+                                    currentPage: page,
+                                    totalItems: totalItems
+                                  };
+                                  let i = index
+                                ">
+                                    <div class="s-cleaner">
+                                    </div>
+                                    <div class="row no-gutters align-content-center ">
+                                        <div class="m-23 imagesize">
+                                            <img src="{{elements.profile_img}}" class="img-fluid profile">
+                                        </div>
+                                        <div class="datatype">
+                                            <div class="fav-head">
+                                                <h5 class="mb-0 pb-0">{{elements.user_name}}</h5>
+                                                <div class="rating">
+                                                    <img src="assets/images/svg/green-star.svg" class="img-fluid">
+                                                    <span>{{elements.sub_service_category_name}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="datatype">
+                                            <button type="button"  class="green-btn w-100" 
+                                            [routerLink]="['/worker/profile']" 
+                                            [queryParams]="{id: elements?.user_id}"
+                                            routerLinkActive="router-link-active">Book Now </button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls (pageChange)="loadPage($event)"></pagination-controls>
+</section>
+
+
+
+
+ 

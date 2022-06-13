@@ -1,0 +1,243 @@
+<!-- <app-howitworks></app-howitworks> -->
+
+<section class="edit-profile">
+    <form [formGroup]="profileForm" (ngSubmit)="profileSubmit()">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="profile-card">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="edit-profile-sec mb-3">
+                            <img bind-src="(profileLink)?(profileLink):'assets/images/png/profile.png'" class="img-fluid p-img" (click)="file.click()">
+                          
+                            <img src="assets/images/svg/camera.svg" class="img-fluid cam-img" (click)="file.click()">
+                            <input style="display: none;" type="file" #file (change)="selectFile($event)"  >
+
+                            <!-- <p class="profile-name">John Miller</p> -->
+                        </div>
+                   
+                    </div>
+                    <div class="col-md-7">
+                        <div class="row mb-0">
+                            <div class="col-md-12">
+                                <label> First Name</label>
+                                <!-- <input type="text" value=""> -->
+                                <input type="text" formControlName="firstName" maxlength="15" placeholder="First Name" (keypress)="alphabetOnly($event)">
+                                <div *ngIf="submitted && values.firstName.errors" class="text-danger">
+                                    <div *ngIf="values.firstName.errors.required">
+                                    First Name is required
+                                    </div>
+                                    <div *ngIf="values.firstName.errors.maxlength">
+                                    Maximum Length is 15.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="col-md-12">
+                                <label> Last Name</label>
+                                <input type="text" formControlName="lastName" maxlength="15" placeholder="Last Name" (keypress)="alphabetOnly($event)">
+                                <div *ngIf="submitted && values.lastName.errors" class="text-danger">
+                                    <div *ngIf="values.lastName.errors.required">
+                                    Last Name is required
+                                    </div>
+                                    <div *ngIf="values.lastName.errors.maxlength">
+                                    Maximum Length is 15.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="col-md-12">
+                                <label> Contact Number</label>
+                                <input type="tel" formControlName="phoneNumber" maxlength="15" minlength="6" placeholder="Phone Number" (keypress)="numberOnly($event)">
+                                <div *ngIf="submitted && values.phoneNumber.errors" class="text-danger">
+                                    <div *ngIf="values.phoneNumber.errors.required">
+                                    Phone Number is required
+                                    </div>
+                                    <div *ngIf="values.phoneNumber.errors.minlength">
+                                        Minimum Length is 6.
+                                    </div>
+                                    <div *ngIf="values.phoneNumber.errors.maxlength">
+                                    Maximum Length is 15.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="col-md-12">
+                                <label> Email Address </label>
+                                <input type="email" formControlName="emailId" maxlength="30" placeholder="Email ID">
+                                <div *ngIf="submitted && values.emailId.errors" class="text-danger">
+                                    <div *ngIf="values.emailId.errors.required">
+                                    Email ID is required
+                                    </div>
+                                    <div *ngIf="values.emailId.errors.maxlength">
+                                    Maximum Length is 30.
+                                    </div>
+                                    <div *ngIf="values.emailId.errors.pattern">
+                                        Invalid email.
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row mb-0">
+                            <div class="col-md-12">
+                                <label> Address </label>
+                                <input type="text" value=" "></div>
+                        </div> -->
+                        <div class="row mb-0">
+                            <div class="col-md-3 col-sm-3 col-4">
+                              <label> Password: </label>
+                           
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-8">
+                            <a class="pay-text pointer" (click)="openModal(confirmpasswd, 'confirmpasswd-modal')">Change Password </a>
+                        </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="col-md-3 col-sm-3 col-4">
+                          <label> Payment: </label>
+                       
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-8">
+                        <p class="pay-text">Update Payment Method</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 save-btn">
+                    <button _ngcontent-elx-c5="" class="sq-btn " type="submit">Save</button>
+                </div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</form>
+</section>
+<button type="button" id="hbtn3" style="display: none;" (click)="openModal(accountverify, 'accountverify-modal')"></button>
+
+<!-- Account Verify modal  for password-->
+<ng-template #accountverify let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="text-center">
+            <img src="assets/images/svg/logo.svg" class="img-fluid logo" />
+            <h3>Account Verification</h3>
+            <p>Please verify your account by entering the verification code we have sent on arvind****@gmail.com or +91
+                ****0123</p>
+        </div>
+        <form>
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="config"></ng-otp-input>
+                            <div *ngIf="optflag" class="text-danger"> Otp is required</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between no-gutters mb-5">
+                        <div><a class="time" href="javascript:void(0)">00:{{timeLeft}}</a></div>
+                        <div><a href="javascript:void(0)" (click)="resendCode()" >Resend Code</a></div>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button class="sq-btn" type="button" (click)="verifyphoneotp()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+
+<!-- Password Change modal -->
+<ng-template #confirmpasswd let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="text-center">
+            <img src="assets/images/svg/logo.svg" class="img-fluid logo" />
+            <h3>Change Password?</h3>
+            <p>Verified account! Please provide old and new password for your account.</p>
+        </div>
+        <form [formGroup]="passwordForm" (ngSubmit)= "PasswordSubmit()">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Old Password</label>
+                    <input type="text" formControlName="oldPassword" minlength="6" maxlength="15" placeholder="Old Password">
+                    <div *ngIf="submitted && passwordvalue.oldPassword.errors" class="text-danger">
+                        <div *ngIf="passwordvalue.oldPassword.errors.required">
+                           Old Password is required
+                        </div>
+                        <div *ngIf= "passwordvalue.oldPassword.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="passwordvalue.oldPassword.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="passwordvalue.oldPassword.errors.pattern">
+                          Invalid Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>New Password</label>
+                    <input type="text" formControlName="newPassword" minlength="6" maxlength="15" placeholder="Password">
+                    <div *ngIf="submitted && passwordvalue.newPassword.errors" class="text-danger">
+                        <div *ngIf="passwordvalue.newPassword.errors.required">
+                          New Password is required
+                        </div>
+                        <div *ngIf= "passwordvalue.newPassword.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="passwordvalue.newPassword.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="passwordvalue.newPassword.errors.pattern">
+                          Invalid Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Confirm Password</label>
+                    <input type="text" formControlName="confirmPassword" minlength="6" maxlength="15" placeholder=" Confirm New Password">
+                    <div *ngIf="submitted && passwordvalue.confirmPassword.errors" class="text-danger">
+                        <div *ngIf="passwordvalue.confirmPassword.errors.required">
+                          Confirm Password is required
+                        </div>
+                        <div *ngIf="passwordvalue.confirmPassword.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="passwordvalue.confirmPassword.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="passwordvalue.confirmPassword.errors.pattern">
+                            Invalid Confirm Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                                <button class="sq-btn" type="submit"
+                                >Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>

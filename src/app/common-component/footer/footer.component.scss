@@ -1,0 +1,51 @@
+@import "../../../styles.scss";
+
+footer {
+  background: $primary-color;
+  color: $white-color;
+  // position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-family: $amedium;
+  .nav-links {
+    padding: 23px 0;
+    cursor: pointer;
+
+    div {
+      margin-right: 50px;
+      font-size: 16px;
+      &:focus {
+        outline: none;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  footer {
+    .justify-content-between {
+      justify-content: center !important;
+    }
+    .nav-links {
+      div {
+        margin-right: 20px;
+        font-size: 16px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 813px) {
+  footer {
+    .nav-links {
+      &.social-links {
+        padding: 0px 0px 23px;
+      }
+    }
+  }
+}

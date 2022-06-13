@@ -1,0 +1,84 @@
+@import "../../../../styles.scss";
+
+.fav-folder {
+  padding: 56px 0;
+  .folder-name {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #989898de;
+    margin-bottom: 70px;
+    h3 {
+      font-size: 30px;
+      font-weight: 500;
+      color: #2c2c2c;
+      font-family: $amedium;
+    }
+    p {
+      color: $primary-color;
+      font-size: 14px;
+    }
+  }
+  .search {
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 25px;
+    img {
+      &.folder {
+        width: 40.5px;
+        height: 35.8px;
+      }
+    }
+  }
+  .details {
+    padding: 40px 0;
+    border-bottom: 1px solid #d2d2d2;
+    h5 {
+      color: $para-color;
+    }
+    .green-btn {
+      padding: 11px 45px;
+      border-bottom: 1px solid #d2d2d2;
+      &.delete {
+        background-image: linear-gradient(to bottom, #ff5a60, #ff5a60);
+      }
+    }
+  }
+}
+
+.display{
+  width: 100px;
+}
+
+@media(max-width:992px) and (min-width:768px){
+  .fav-folder{ 
+    .folder-name{
+      margin-bottom: 50px;
+    }
+    .details { .green-btn {
+       padding: 9px 26px;
+    border-bottom: 1px solid #d2d2d2;
+} } }
+}
+
+@media(max-width:768px){
+  .folder-name{
+    margin-bottom: 40px;
+  }
+}
+
+@media(max-width:550px){
+
+  .fav-folder{ 
+    .folder-name{
+      margin-bottom: 30px;
+    }
+    
+    .details { .green-btn {
+    padding: 7px 21px;
+    border-bottom: 1px solid #d2d2d2;
+} }
+.search{ img.folder {
+  width: 27.5px;
+  height: 30.8px;
+  margin-bottom: 5px;
+} }
+  } 
+}

@@ -1,0 +1,147 @@
+<section class="new-service">
+    <form [formGroup]="bookingForm" (ngSubmit)= "bookingSubmit()">
+    <div class="green-bg w-100">
+        <div class="container-outer">
+            <div class="container-inner">
+                <div class="row no-gutters justify-content-center">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <h3>When do you require service?</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>
+                            Services
+                        </label>
+                        <select formControlName="services">
+                            <option *ngFor="let service of servicelist" [value]= "service.service_id">{{service.service_name}}</option>
+                        </select>
+                        <div *ngIf="submitted && values.services.errors" class="text-danger">
+                            <div *ngIf="values.services.errors.required">
+                                Service is required
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-outer">
+        <div class="container-inner">
+            <!-- <form> -->
+                <div class="row no-gutters justify-content-center">
+                     <div class="col-md-12 ">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-sm-12 col-12">
+                                <div class="calender">
+                                <p-calendar [inline]="true" id="calendar" [(ngModel)]="date" dateFormat="dd.mm.yy" formControlName="calender" ></p-calendar>
+                                <!-- <input type="text" [value]="date">   -->
+                            </div>
+                        </div>
+                        </div>
+                    </div>   
+
+                    <div class="col-md-10 space">
+                        <hr>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-12 time-picker">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5 col-md-6 col-sm-12 text-center">
+                                <label>
+                                    Start Time
+                                </label>
+                                <section class="time-carousel d-flex justify-content-center">
+                                    <p-carousel [value]="startTime" orientation="vertical" 
+                                        [ngStyle]="{'max-width':'100%','margin-top':'0'}" [numVisible]="1"
+                                        [numScroll]="1">
+                                        <ng-template let-x pTemplate="item">
+                                            <div class="time">
+                                                <div class="row">
+                                                    <div *ngFor="let item of x" class="col-md-4 col-sm-4 col-6">
+                                                        <button type="button" class="time-stamp" (click)= "startTimeval(item)">
+                                                            <p>{{item}}</p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </p-carousel>
+                                </section>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12  text-center">
+                                <label>
+                                    End Time
+                                </label>
+                                <section class="time-carousel d-flex justify-content-center">
+                                    <p-carousel [value]="endTime" orientation="vertical" 
+                                        [ngStyle]="{'max-width':'100%','margin-top':'0'}" [numVisible]="1"
+                                        [numScroll]="1">
+                                        <ng-template let-x pTemplate="item">
+                                            <div class="time">
+                                                <div class="row">
+                                                    <div *ngFor="let item of x" class="col-md-4 col-sm-4 col-6">
+                                                        <button type="button" class="time-stamp" (click)= "endTimeval(item)">
+                                                            <p>{{item}}</p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </p-carousel>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" placeholder="please Enter Name" [value]="name" maxlength="30" >
+                        <div *ngIf="submitted && values.name.errors" class="text-danger">
+                            <div *ngIf="values.name.errors.required">
+                                Name is required
+                            </div>
+                            <div *ngIf="values.name.errors.maxlength">
+                              Maximum Length is 30.
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-10">
+                        <label>Contact Number</label>
+                        <input type="text" formControlName="contactNumber" placeholder="Please Enter Contact No." [value]="phoneNo" maxlength="15" >
+                        <div *ngIf="submitted && values.contactNumber.errors" class="text-danger">
+                            <div *ngIf="values.contactNumber.errors.required">
+                              Contact Number is required
+                            </div>
+                            <div *ngIf="values.contactNumber.errors.maxlength">
+                              Maximum Length is 15.
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-10">
+                        <label>Address</label>
+                        <input type="text" formControlName="Address" placeholder="Please Enter Address" [routerLink]="['/service/address-list']" routerLinkActive="router-link-active">
+                        <div *ngIf="submitted && values.Address.errors" class="text-danger">
+                            <div *ngIf="values.Address.errors.required">
+                                Address is required
+                            </div>
+                            <div *ngIf="values.Address.errors.maxlength">
+                              Maximum Length is 100.
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                                <button class="cancel-btn w-100 mb-3" [routerLink]="['/worker/profile']" 
+                                [queryParams]="{ id: WorkerID }" routerLinkActive="router-link-active" >Cancel </button>
+                            </div>
+                            <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                                <button  type="submit" class="sq-btn w-100 mb-3">Confirm </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- </form> -->
+        </div>
+    </div>
+</form>
+</section>

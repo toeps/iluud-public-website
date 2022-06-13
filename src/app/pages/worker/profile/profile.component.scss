@@ -1,0 +1,200 @@
+@import "../../../../styles.scss";
+
+.w-profile{
+  padding: 56px 0;
+  .back-btn{
+    margin: 0 0 42px;
+    background: #e9e9e9;
+    padding: 14px;
+    cursor: pointer;
+  }
+
+.profile-details {
+  .profile-img {
+    width: 139px;
+    height: 140px;
+    border: solid 3px #f9c957;
+    border-radius: 50%;
+    margin-bottom: 17px;
+  }
+
+  h3 {
+    font-family: $abold;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-family: "AvenirLTStd-Book";
+    font-size: 16px !important;
+    font-weight: 500;
+    color: #2c2c2c;
+    margin-bottom: 25px;
+  }
+
+  .profile-desc {
+    p {
+      margin-bottom: 0px;
+      letter-spacing: 0.5px;
+      font-family: $abold;
+    }
+
+    label {
+      font-family: "AvenirLTStd-Book";
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.44px;
+      color: #858585;
+    }
+  }
+
+  .book-now {
+    margin-bottom: 65px;
+  }
+
+  .worker-images {
+    margin-bottom: 70px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .favourimg{
+    width: 35px;
+    height: 35px;;
+  }
+
+  .worker-reviews {
+    h3 {
+      font-family: "AvenirLTStd-Book";
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+    }
+
+    hr {
+      border-top: solid 1px $place-color;
+      margin: 20px 0 50px;
+    }
+
+    .review-card {
+      border: solid 1px $place-color;
+      padding: 30px 32px;
+      border-radius: 29px;
+      margin-bottom: 45px;
+
+      p {
+        font-family: $alight;
+        font-size: 16px !important;
+        font-weight: 500;
+        color: #2c2c2c;
+        margin-bottom: 0;
+      }
+
+      .profile-img {
+        width: 78px;
+        height: 77px;
+        border-radius: 50%;
+        margin-right: 25px;
+        border: 1px solid $orange-color;
+      }
+
+      h6 {
+        font-family: $abold;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 0.4px;
+      }
+
+      .review-date {
+        font-family: "AvenirLTStd-Book";
+        font-size: 14px !important;
+        font-weight: 500;
+        letter-spacing: 0.36px;
+        color: #5d5d5d;
+      }
+
+      .review-rating {
+        font-family: $abold;
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+    }
+
+    .more-reviews {
+      margin-bottom: 20px;
+    }
+  } } }
+
+@media(max-width:992px) {
+  .profile-details {
+    .book-now {
+      margin-bottom: 50px;
+    }
+
+    .worker-images {
+      margin-bottom: 50px;
+    }
+
+    .worker-reviews {
+      .more-reviews {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+}
+
+@media(max-width:768px) {
+  .profile-details {
+    .book-now {
+      margin-bottom: 40px;
+    }
+
+    .worker-images {
+      margin-bottom: 50px;
+    }
+
+    .worker-reviews {
+      .more-reviews {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+@media(max-width:568px) {
+  .profile-details {
+    .book-now {
+      margin-bottom: 30px;
+    }
+
+    .worker-images {
+      margin-bottom: 50px;
+    }
+
+    .worker-reviews {
+      .more-reviews {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+@media(max-width:440px) {
+  .profile-details {
+    .worker-reviews {
+      .review-card {
+        h6 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 15.5px !important;
+        }
+      }
+    }
+  }
+}

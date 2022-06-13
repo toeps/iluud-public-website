@@ -1,0 +1,40 @@
+.contact {
+    padding: 50px 0;
+  .heading {
+    margin-bottom: 70px;
+  }
+
+  .back-btn {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: "AvenirLTStd-Book";
+    margin-bottom: 0px;
+  }
+}
+
+@media(max-width:992px){
+  .contact{ .heading{
+    margin-bottom: 55px;
+} }
+.mt-5{
+  margin-top: 2rem!important;
+} }
+@media(max-width:768px){
+  .contact{ .heading{
+    margin-bottom: 40px;
+} }
+.mt-5{
+  margin-top: 1.5rem!important;
+} }
+
+@media(max-width:568px){
+  .contact{ .heading{
+    margin-bottom: 30px;
+} }
+.mt-5{
+  margin-top: 1rem!important;
+} }

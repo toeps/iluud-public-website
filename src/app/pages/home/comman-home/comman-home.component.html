@@ -1,0 +1,159 @@
+<app-head-search></app-head-search>
+<section class="services">
+    <div class="container-outer">
+        <div class="container-inner text-center">
+            <h1>What are you looking for?</h1>
+            <div class="row">
+                <div class="col-lg-3 offset-lg-0  col-md-5 offset-md-1 col-sm-6 col-12">
+                    <div class="card mb-4" [routerLink]="['/user']" routerLinkActive="router-link-active">
+                        <img src="assets/images/png/Indoor-domestic.png" class="img-fluid" />
+                        <h3>Indoor</h3>
+                        <p>Domestic</p>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-5 col-sm-6 col-12">
+                    <div class="card mb-4" [routerLink]="['/service']" routerLinkActive="router-link-active">
+                        <img src="assets/images/png/Outdoor domestic.png" class="img-fluid" />
+                        <h3>Outdoor</h3>
+                        <p>Domestic</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-0  col-md-5 offset-md-1 col-sm-6 col-12">
+                    <div class="card mb-4 " [routerLink]="['/worker/feedback']" routerLinkActive="router-link-active">
+                        <img src="assets/images/png/Professional-Services.png" class="img-fluid" />
+                        <h3>Professional</h3>
+                        <p>Services</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                    <div class="card mb-4" [routerLink]="['/user/bookings']" routerLinkActive="router-link-active">
+                        <img src="assets/images/png/Trade Services.png" class="img-fluid" />
+                        <h3>Trade</h3>
+                        <p>Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-howitworks></app-howitworks>
+<section class="worker-list">
+    <div class="container-outer">
+        <div class="container-inner text-center">
+            <h1>Meet our top-rated iWorkers</h1>
+            <div class="slider">
+                <h3>Indoors</h3>
+                <p-carousel [value]="profile" styleClass="custom-carousel" [numVisible]="6" [numScroll]="1"
+                    [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+                    <ng-template let-x pTemplate="item">
+                        <div class="profile">
+                            <div class="p-grid p-nogutter">
+                                <div class="p-col-12">
+                                    <img src="assets/images/png/profile.png" class="img-fluid" />
+                                    <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
+                                </div>
+                                <div class="p-col-12 car-data">
+                                    <p class="worker-title">{{x.workerName}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+            <div class="slider">
+                <h3>Outdoor</h3>
+                <p-carousel [value]="profile" styleClass="custom-carousel" [numVisible]="6" [numScroll]="1"
+                    [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+                    <ng-template let-x pTemplate="item">
+                        <div class="profile">
+                            <div class="p-grid p-nogutter">
+                                <div class="p-col-12">
+                                    <img src="assets/images/png/profile.png" class="img-fluid p-img" />
+                                    <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
+                                </div>
+                                <div class="p-col-12 car-data">
+                                    <p class="worker-title">{{x.workerName}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+            <div class="slider">
+                <h3>Professional</h3>
+                <p-carousel [value]="profile" styleClass="custom-carousel" [numVisible]="6" [numScroll]="1"
+                    [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+                    <ng-template let-x pTemplate="item">
+                        <div class="profile">
+                            <div class="p-grid p-nogutter">
+                                <div class="p-col-12">
+                                    <img src="assets/images/png/profile.png" class="img-fluid" />
+                                    <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
+                                </div>
+                                <div class="p-col-12 car-data">
+                                    <p class="worker-title">{{x.workerName}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="about-app">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="app-border">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 offset-lg-0 col-md-10 offset-md-1 col-sm-12 col-12">
+                        <h1>The Mobile App</h1>
+                        <h2>Quick & Easy</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <div class="d-flex align-items-center flex-wrap justify-content-start">
+                            <div class="mb-3">
+                                <img src="assets/images/png/apple-play.png" class="img-fluid mb-2 mr-2" />
+                            </div>
+                            <div class="mb-3">
+                                <img src="assets/images/png/google-play.png" class="img-fluid mb-2 mr-2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-0 col-md-10 offset-md-1 col-sm-12 col-12 text-center">
+                        <img src="assets/images/png/app.png" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="partnership">
+    <div class="container-outer">
+        <div class="container-inner text-center">
+            <h1 class="green">In Partnership With</h1>
+            <h1>uKheshe</h1>
+            <div class="row no-gutters align-items-top text-center justify-content-around flex-wrap">
+                <div class="">
+                    <img src="assets/images/svg/transfer.svg" class="img-fluid" />
+                    <h4>Safe & Secure Money transfers</h4>
+                    <p>Lorem ipsum dolor sit amet is the dummy text of the typesetting industry</p>
+                </div>
+                <div>
+                    <img src="assets/images/svg/cart.svg" class="img-fluid" />
+                    <h4>Redeem Cash at any Pick 'n' Pay</h4>
+                    <p>Lorem ipsum dolor sit amet is the dummy text of the typesetting industry</p>
+                </div>
+                <div>
+                    <img src="assets/images/svg/bank.svg" class="img-fluid" />
+                    <h4>No Bank Account Needed</h4>
+                    <p>Lorem ipsum dolor sit amet is the dummy text of the typesetting industry</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,125 @@
+<section class="w-profile">
+<div class="container-outer">
+    <div class="container-inner">
+        <div class="row no-gutters">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-5">
+                <div class="row no-gutters align-items-center back-btn justify-content-center" [routerLink]="['/user']"
+                    routerLinkActive="router-link-active">
+                    <div>
+                        <img src="assets/images/svg/back-arrow.svg" class="img-fluid" />
+                    </div>
+                    <div>
+                        <h3>Back</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-details">
+                <!-- <img [src]="profileData?.image" class="img-fluid profile-img" /> -->
+                <img bind-src="(workerdata?.profile_img)?workerdata?.profile_img:'assets/images/png/profile.png' " class="img-fluid profile-img" />
+
+                <h3>{{workerdata?.first_name}} {{workerdata?.last_name}}</h3>
+                <p>{{workerdata?.about_me}}</p>
+                <div class="row align-items-center profile-desc">
+                    <div class="col-md-3 col-sm-6 col-6">
+                        <label>Rate</label>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-6">
+                        <p>R{{workerdata?.rate}}/hr</p>
+                    </div>
+                </div>
+                <div class="row align-items-center profile-desc">
+                    <div class="col-md-3 col-sm-6 col-6">
+                        <label>Contact Number</label>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-6">
+                        <p>{{workerdata?.contact}}</p>
+                    </div>
+                </div>
+                <!-- <div class="row align-items-center profile-desc">
+                    <div class="col-md-3 col-sm-6 col-6">
+                        <label>Working Hours</label>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-6">
+                        <p>{{profileData?.startHours}} - {{profileData?.endHours}}</p>
+                    </div>
+                </div> -->
+                <div class="row align-items-center profile-desc">
+                    <div class="col-md-3 col-sm-6 col-6">
+                        <label>Ratings</label>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-6">
+                        <p>{{workerdata?.rating}}</p>
+                    </div>
+                </div>
+                <div class="row align-items-center profile-desc">
+                    <div class="col-md-3 col-sm-6 col-6">
+                        <label>Experience</label>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-6">
+                        <p class="profile-desc">{{workerdata?.total_exp}} Yrs</p>
+                    </div>
+                </div>
+<div>
+                <div *ngIf= "fav == 0" (click)= "check()">
+                    <img src="assets/images/svg/heart.svg" class="favourimg">
+                </div>
+                <div *ngIf= "fav!=0" (click)= "check()">
+                    <img src="assets/images/svg/heart-fill.svg" class="favourimg">
+                </div>
+</div>
+                
+                <div class="row book-now mt-3">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                        <!-- <button class="green-btn w-100" [routerLink]="['/service']"  [queryParams]="{id: order}" (click)="workerId()"  routerLinkActive="router-link-active" >Book Now</button> -->
+                        <button class="green-btn w-100" (click)="workerId()">Book Now</button>
+                    </div>
+                </div>
+                <div class="row worker-images">
+                    <div class="col-md-3 mb-2" >
+                        <!-- <img [src]="review.uploadedImages" class="img-fluid" /> -->
+                        <img bind-src="(workerdata?.images)?(workerdata?.images):'assets/images/png/Indoor-domestic.png'" class="img-fluid" />
+
+                    </div>
+                </div>
+                <div class="worker-reviews">
+                    <h3>Reviews</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12 review-card" *ngFor="let review of reviewdata">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <!-- <img src="assets/images/png/profile.png" class="img-fluid profile-img" /> -->
+                                            <img bind-src="(review.profile_img)?(review.profile_img):'assets/images/png/profile.png'" class="img-fluid profile-img" />
+
+                                        </div>
+                                        <div>
+                                            <h6>{{review.user_name}}</h6>
+                                            <p class="review-date">{{review.date}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img src="assets/images/svg/green-star.svg" class="img-fluid mr-2" />
+                                    </div>
+                                    <div>
+                                        <p class="review-rating">{{review.rating}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>{{review.description}}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end more-reviews">
+                        <div class="col-lg-3 col-md-5 col-sm-8 col-12 text-right">
+                            <button class="green-btn">Load More Reviews</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

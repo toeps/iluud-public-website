@@ -1,0 +1,151 @@
+@import "../../../../styles.scss";
+
+.bookings {
+  padding: 56px 0;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: "AvenirLTStd-Book";
+    margin-bottom: 50px;
+  }
+
+  .profile-details {
+    .profile-img {
+      width: 139px;
+      height: 140px;
+      border: solid 3px #f9c957;
+      border-radius: 50%;
+      margin-bottom: 17px;
+    }
+
+    h3 {
+      font-family: $abold;
+      font-size: 25px;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-family: "AvenirLTStd-Book";
+      font-size: 16px;
+      font-weight: 500;
+      color: #2c2c2c;
+      margin-bottom: 25px;
+    }
+  }
+
+  .worker-card {
+    border-radius: 29px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: $white-color;
+    padding: 24px 34px;
+    position: relative;
+    margin-bottom: 60px;
+    &:nth-last-child(1){
+      margin-bottom: 0px !important;
+    }
+
+    h5 {
+      font-family: $abold;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    h4 {
+      color: #858585;
+      font-family: $alight;
+    }
+
+    span {
+      color: #858585;
+      font-family: $alight;
+    }
+
+    img {
+      &.profile {
+        width: 105px;
+        height: 106px;
+        border: solid 3px #f9c957;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      &.rating {
+        width: 19.5px;
+        height: 18.6px;
+        margin-right: 10px;
+      }
+
+      &.supertag {
+        position: absolute;
+        top: -25px;
+        right: -18px;
+        width: 70px;
+      }
+    }
+    .green-btn {
+      font-size: 11px;
+      padding: 11px 5px;
+      img {
+        width: 15px;
+      }
+    }
+  }
+}
+
+
+@media(max-width:992px) {
+  .bookings {
+    h1 {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media(max-width:568px){
+  .bookings{ 
+    h1 {
+      margin-bottom: 20px;
+    }
+    .worker-card{ img.supertag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 50px;
+} } }
+}
+@media (max-width: 400px) {
+  .bookings {
+    .nav-pills {
+      .nav-link {
+        color: #000000;
+        margin-right: 25px;
+        font-size: 18px;
+      }
+    }
+    .worker-card {
+      img.profile {
+        width: 80px;
+        height: 80px;
+        border: solid 3px #f9c957;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+      h5 {
+        font-family: "AvenirLTStd-Heavy";
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      h6 {
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}

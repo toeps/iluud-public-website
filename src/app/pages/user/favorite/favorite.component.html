@@ -1,0 +1,733 @@
+<section class="fav-folder">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row justify-content-between tabset">
+                <div class="col-md-12  custom-accordian">
+                    <ngb-tabset type="pills">
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <div (click)="check('1')">Indoor</div>
+                                </ng-template>
+                            <ng-template ngbTabContent>
+                                <div class="row no-gutters d-flex flex-wrap justify-content-start">
+                                    <div>
+                                        <h3>Your Favorite iWorker</h3>
+                                    </div>
+                                    <div class="filter-icon">
+                                        <img src="assets/images/svg/filter-results-button.svg" class="img-fluid" />
+                                    </div>
+                                     <div (click)="openScrollableContent(longContent)" class="d-flex align-items-center">
+                                     <button class="filter-btn"><span>Filter</span>
+                                     <img src="assets/images/svg/filter.svg" class="img-fluid" /></button>
+                                     </div>
+                                </div>
+                                <div class="row no-gutters d-flex justify-content-start">
+                                    <div class="fav-sub-title">
+                                        123 Cleaners in Cap Town
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="fav-card  mr-2" *ngFor="let elements of indoorFav">
+                                    <div class="s-cleaner">
+                                        <!-- <img src="{{elements.profileImage}}" class="img-fluid"> -->
+                                    </div>
+                                    <div class="row no-gutters align-content-center ">
+                                        <div class="m-23">
+                                            <!-- <img src="assets/images/png/profile.png" class="img-fluid profile"> -->
+                                            <img src="{{elements.profile_img}}" class="img-fluid profile">
+
+                                        </div>
+                                        <div>
+                                            <div class="fav-head">
+                                                <h5 class="mb-0 pb-0">{{elements.user_name}}</h5>
+                                                <!-- <h6 class="mb-0 pb-0">{{elements.city}}</h6> -->
+                                                <div class="rating">
+                                                    <img src="assets/images/svg/green-star.svg" class="img-fluid">
+                                                    <span>{{elements.review}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pt-3 heart">
+                                            <button class="btn btn-lg " (click)="openModal(content, elements?.user_id)" >
+                                                <img src="assets/images/svg/heart-fill.svg" class="img-fluid"></button>
+                                        </div>
+    
+                                    </div>
+    
+                                    <!-- <div class="row up-down-icon">
+                                        <ngb-accordion class="range-accordion">
+                                            <ngb-panel>
+                                                <ng-template ngbPanelTitle>
+                                                    <div class="d-flex justify-content-between text-dec ">
+                                                        <div class="d-flex rev-title">Click
+                                                            to read more Reviews</div>
+                                                        <div class="d-flex">
+                                                            <span class="ml-auto">
+    
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                                <ng-template ngbPanelContent>
+    
+                                                    <div class="row">
+                                                        <div class="d-flex flex-wrap align-content-center">
+                                                            <div class="m-23">
+                                                                <img src="assets/images/png/Group 25113.png"
+                                                                    class="img-fluid">
+                                                            </div>
+                                                            <div class="review">
+                                                                <h5>Nina</h5>
+                                                                <p> 05th Aug 2019</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-md-12 col-sm-12 col-12 pt-3">
+                                                            <p class="rate-text"> is simply dummy text of the printing and
+                                                                typesetting industry. Lorem
+                                                                Ipsum has been the industry's standard dummy text ever since
+                                                                the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled
+                                                                it to make a
+                                                                type specimen book. It has survived not only five centuries,
+                                                                but also
+                                                                the leap into electronic typesetting, remaining essentially
+                                                                unchanged.
+                                                                It was popularised in the 1960s with the release of Letraset
+                                                                sheets
+                                                                containing Lorem Ipsum passages, and more recently with
+                                                                desktop
+                                                                publishing software like Aldus PageMaker including versions
+                                                                of Lorem
+                                                                Ipsum.</p>
+                                                            <div class="text-right pt-3 load-m">
+                                                                Load More Review
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </ngb-panel>
+                                        </ngb-accordion>
+                                        <hr />
+                                    </div> -->
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                                           
+                        <!-- <ngb-tab>
+                            <ng-template ngbTabTitle>Outdoor</ng-template>
+                            <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+                                single-origin coffee squid.
+                                <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson
+                                    artisan
+                                    four loko farm-to-table
+                                    craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip
+                                    jean shorts ullamco ad vinyl
+                                    cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.
+                                    Keytar helvetica VHS salvia
+                                    yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                                    anderson 8-bit, sustainable jean
+                                    shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                                    stumptown, tumblr butcher vero
+                                    sint qui sapiente accusamus tattooed echo park.</p>
+                            </ng-template>
+                        </ngb-tab> -->
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <div (click)="check('2')">Outdoor</div>
+                            </ng-template>
+                            <ng-template ngbTabContent>
+                                <div class="row no-gutters d-flex flex-wrap justify-content-start">
+                                    <div>
+                                        <h3>Your Favorite iWorker</h3>
+                                    </div>
+                                    <div class="filter-icon">
+                                        <img src="assets/images/svg/filter-results-button.svg" class="img-fluid" />
+                                    </div>
+                                     <div (click)="openScrollableContent(longContent)" class="d-flex align-items-center">
+                                     <button class="filter-btn"><span>Filter</span>
+                                     <img src="assets/images/svg/filter.svg" class="img-fluid" /></button>
+                                     </div>
+                                </div>
+                                <div class="row no-gutters d-flex justify-content-start">
+                                    <div class="fav-sub-title">
+                                        123 Cleaners in Cap Town
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="fav-card  mr-2" *ngFor="let elements of indoorFav">
+                                    <div class="s-cleaner">
+                                        <!-- <img src="{{elements.profileImage}}" class="img-fluid"> -->
+                                    </div>
+                                    <div class="row no-gutters align-content-center ">
+                                        <div class="m-23">
+                                            <!-- <img src="assets/images/png/profile.png" class="img-fluid profile"> -->
+                                            <img src="{{elements.profile_img}}" class="img-fluid profile">
+
+                                        </div>
+                                        <div>
+                                            <div class="fav-head">
+                                                <h5 class="mb-0 pb-0">{{elements.user_name}}</h5>
+                                                <!-- <h6 class="mb-0 pb-0">{{elements.city}}</h6> -->
+                                                <div class="rating">
+                                                    <img src="assets/images/svg/green-star.svg" class="img-fluid">
+                                                    <span>{{elements.review}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pt-3 heart">
+                                            <button class="btn btn-lg " (click)="openModal(content, elements?.user_id)">
+                                                <img src="assets/images/svg/heart-fill.svg" class="img-fluid"></button>
+                                        </div>
+    
+                                    </div>
+    
+                                    <!-- <div class="row up-down-icon">
+                                        <ngb-accordion class="range-accordion">
+                                            <ngb-panel>
+                                                <ng-template ngbPanelTitle>
+                                                    <div class="d-flex justify-content-between text-dec ">
+                                                        <div class="d-flex rev-title">Click
+                                                            to read more Reviews</div>
+                                                        <div class="d-flex">
+                                                            <span class="ml-auto">
+    
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                                <ng-template ngbPanelContent>
+    
+                                                    <div class="row">
+                                                        <div class="d-flex flex-wrap align-content-center">
+                                                            <div class="m-23">
+                                                                <img src="assets/images/png/Group 25113.png"
+                                                                    class="img-fluid">
+                                                            </div>
+                                                            <div class="review">
+                                                                <h5>Nina</h5>
+                                                                <p> 05th Aug 2019</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-md-12 col-sm-12 col-12 pt-3">
+                                                            <p class="rate-text"> is simply dummy text of the printing and
+                                                                typesetting industry. Lorem
+                                                                Ipsum has been the industry's standard dummy text ever since
+                                                                the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled
+                                                                it to make a
+                                                                type specimen book. It has survived not only five centuries,
+                                                                but also
+                                                                the leap into electronic typesetting, remaining essentially
+                                                                unchanged.
+                                                                It was popularised in the 1960s with the release of Letraset
+                                                                sheets
+                                                                containing Lorem Ipsum passages, and more recently with
+                                                                desktop
+                                                                publishing software like Aldus PageMaker including versions
+                                                                of Lorem
+                                                                Ipsum.</p>
+                                                            <div class="text-right pt-3 load-m">
+                                                                Load More Review
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </ngb-panel>
+                                        </ngb-accordion>
+                                        <hr />
+                                    </div> -->
+                                </div>
+    
+                            </ng-template>
+                        </ngb-tab>
+
+                        <!-- <ngb-tab>
+                            <ng-template ngbTabTitle>Professional</ng-template>
+                            <ng-template ngbTabContent>
+                                <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh
+                                    elit id
+                                    diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus
+                                    turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra et nisl at faucibus.
+                                    Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas
+                                    ut
+                                    ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
+                                    nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est, eu
+                                    tincidunt
+                                    odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                                    ridiculus
+                                    mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec
+                                    tortor
+                                    vel tellus pulvinar feugiat.</p>
+                            </ng-template>
+                        </ngb-tab> -->
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>
+                                <div (click)="check('3')">Professional</div>
+                                </ng-template>
+                            <ng-template ngbTabContent>
+                                <div class="row no-gutters d-flex flex-wrap justify-content-start">
+                                    <div>
+                                        <h3>Your Favorite iWorker</h3>
+                                    </div>
+                                    <div class="filter-icon">
+                                        <img src="assets/images/svg/filter-results-button.svg" class="img-fluid" />
+                                    </div>
+                                     <div (click)="openScrollableContent(longContent)" class="d-flex align-items-center">
+                                     <button class="filter-btn"><span>Filter</span>
+                                     <img src="assets/images/svg/filter.svg" class="img-fluid" /></button>
+                                     </div>
+                                </div>
+                                <div class="row no-gutters d-flex justify-content-start">
+                                    <div class="fav-sub-title">
+                                        123 Cleaners in Cap Town
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="fav-card  mr-2" *ngFor="let elements of indoorFav">
+                                    <div class="s-cleaner">
+                                        <!-- <img src="{{elements.profileImage}}" class="img-fluid"> -->
+                                    </div>
+                                    <div class="row no-gutters align-content-center ">
+                                        <div class="m-23">
+                                            <!-- <img src="assets/images/png/profile.png" class="img-fluid profile"> -->
+                                            <img src="{{elements.profile_img}}" class="img-fluid profile">
+
+                                        </div>
+                                        <div>
+                                            <div class="fav-head">
+                                                <h5 class="mb-0 pb-0">{{elements.user_name}}</h5>
+                                                <!-- <h6 class="mb-0 pb-0">{{elements.city}}</h6> -->
+                                                <div class="rating">
+                                                    <img src="assets/images/svg/green-star.svg" class="img-fluid">
+                                                    <span>{{elements.review}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pt-3 heart">
+                                            <button class="btn btn-lg " (click)="openModal(content, elements?.user_id)">
+                                                <img src="assets/images/svg/heart-fill.svg" class="img-fluid"></button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row up-down-icon">
+                                        <ngb-accordion class="range-accordion">
+                                            <ngb-panel>
+                                                <ng-template ngbPanelTitle>
+                                                    <div class="d-flex justify-content-between text-dec ">
+                                                        <div class="d-flex rev-title">Click
+                                                            to read more Reviews</div>
+                                                        <div class="d-flex">
+                                                            <span class="ml-auto">
+    
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                                <ng-template ngbPanelContent>
+    
+                                                    <div class="row">
+                                                        <div class="d-flex flex-wrap align-content-center">
+                                                            <div class="m-23">
+                                                                <img src="assets/images/png/Group 25113.png"
+                                                                    class="img-fluid">
+                                                            </div>
+                                                            <div class="review">
+                                                                <h5>Nina</h5>
+                                                                <p> 05th Aug 2019</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-md-12 col-sm-12 col-12 pt-3">
+                                                            <p class="rate-text"> is simply dummy text of the printing and
+                                                                typesetting industry. Lorem
+                                                                Ipsum has been the industry's standard dummy text ever since
+                                                                the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled
+                                                                it to make a
+                                                                type specimen book. It has survived not only five centuries,
+                                                                but also
+                                                                the leap into electronic typesetting, remaining essentially
+                                                                unchanged.
+                                                                It was popularised in the 1960s with the release of Letraset
+                                                                sheets
+                                                                containing Lorem Ipsum passages, and more recently with
+                                                                desktop
+                                                                publishing software like Aldus PageMaker including versions
+                                                                of Lorem
+                                                                Ipsum.</p>
+                                                            <div class="text-right pt-3 load-m">
+                                                                Load More Review
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </ngb-panel>
+                                        </ngb-accordion>
+    
+                                        <hr />
+    
+                                    </div> -->
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+
+                        <!-- <ngb-tab>
+                            <ng-template ngbTabTitle>Trade</ng-template>
+                            <ng-template ngbTabContent>
+                                <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh
+                                    elit id
+                                    diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus
+                                    turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra et nisl at faucibus.
+                                    Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas
+                                    ut
+                                    ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
+                                    nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est, eu
+                                    tincidunt
+                                    odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                                    ridiculus
+                                    mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec
+                                    tortor
+                                    vel tellus pulvinar feugiat.</p>
+                            </ng-template>
+                        </ngb-tab> -->
+                        <ngb-tab >
+                            <ng-template ngbTabTitle>
+                                <div (click)="check('4')">Trade</div>
+                                </ng-template>
+                            <ng-template ngbTabContent>
+                                <div class="row no-gutters d-flex flex-wrap justify-content-start">
+                                    <div>
+                                        <h3>Your Favorite iWorker</h3>
+                                    </div>
+                                    <div class="filter-icon">
+                                        <img src="assets/images/svg/filter-results-button.svg" class="img-fluid" />
+                                    </div>
+                                     <div (click)="openScrollableContent(longContent)" class="d-flex align-items-center">
+                                     <button class="filter-btn"><span>Filter</span>
+                                     <img src="assets/images/svg/filter.svg" class="img-fluid" /></button>
+                                     </div>
+                                </div>
+                                <div class="row no-gutters d-flex justify-content-start">
+                                    <div class="fav-sub-title">
+                                        123 Cleaners in Cap Town
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="fav-card  mr-2" *ngFor="let elements of indoorFav">
+                                    <div class="s-cleaner">
+                                        <!-- <img src="{{elements.profileImage}}" class="img-fluid"> -->
+                                    </div>
+                                    <div class="row no-gutters align-content-center ">
+                                        <div class="m-23">
+                                            <!-- <img src="assets/images/png/profile.png" class="img-fluid profile"> -->
+                                            <img src="{{elements.profile_img}}" class="img-fluid profile">
+
+                                        </div>
+                                        <div>
+                                            <div class="fav-head">
+                                                <h5 class="mb-0 pb-0">{{elements.user_name}}</h5>
+                                                <!-- <h6 class="mb-0 pb-0">{{elements.city}}</h6> -->
+                                                <div class="rating">
+                                                    <img src="assets/images/svg/green-star.svg" class="img-fluid">
+                                                    <span>{{elements.review}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pt-3 heart">
+                                            <button class="btn btn-lg " (click)="openModal(content, elements?.user_id)">
+                                                <img src="assets/images/svg/heart-fill.svg" class="img-fluid"></button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row up-down-icon">
+                                        <ngb-accordion class="range-accordion">
+                                            <ngb-panel>
+                                                <ng-template ngbPanelTitle>
+                                                    <div class="d-flex justify-content-between text-dec ">
+                                                        <div class="d-flex rev-title">Click
+                                                            to read more Reviews</div>
+                                                        <div class="d-flex">
+                                                            <span class="ml-auto">
+    
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                                <ng-template ngbPanelContent>
+    
+                                                    <div class="row">
+                                                        <div class="d-flex flex-wrap align-content-center">
+                                                            <div class="m-23">
+                                                                <img src="assets/images/png/Group 25113.png"
+                                                                    class="img-fluid">
+                                                            </div>
+                                                            <div class="review">
+                                                                <h5>Nina</h5>
+                                                                <p> 05th Aug 2019</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ">
+                                                        <div class="col-md-12 col-sm-12 col-12 pt-3">
+                                                            <p class="rate-text"> is simply dummy text of the printing and
+                                                                typesetting industry. Lorem
+                                                                Ipsum has been the industry's standard dummy text ever since
+                                                                the 1500s,
+                                                                when an unknown printer took a galley of type and scrambled
+                                                                it to make a
+                                                                type specimen book. It has survived not only five centuries,
+                                                                but also
+                                                                the leap into electronic typesetting, remaining essentially
+                                                                unchanged.
+                                                                It was popularised in the 1960s with the release of Letraset
+                                                                sheets
+                                                                containing Lorem Ipsum passages, and more recently with
+                                                                desktop
+                                                                publishing software like Aldus PageMaker including versions
+                                                                of Lorem
+                                                                Ipsum.</p>
+                                                            <div class="text-right pt-3 load-m">
+                                                                Load More Review
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </ngb-panel>
+                                        </ngb-accordion>
+    
+                                        <hr />
+    
+                                    </div> -->
+                                </div>    
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-howitworks></app-howitworks>
+
+<!-- <ng-template #content let-modal>
+
+    <div class="modal-body fav-model">
+        <div class="text-center ">
+            <h3 class=""> Create your own favorite Folder</h3>
+        </div>
+        <form>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name">
+            </div>
+            <div class="col-md-8">
+                <div class="row flex-wrap justify-content-around align-content-center">
+                    <div>
+                        <p class="model-text"> iWorker</p>
+                    </div>
+                    <div class="model-text">
+                        <p class="model-text">ABc </p></div>
+                        <div class="heart">
+                            <img src="assets/images/svg/heart-fill.svg" class="img-fluid">
+                        </div>
+                    </div>
+            </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 pt-3 text-center">
+                        <button class="sq-btn" type="button" tabindex="0">Add</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+</ng-template> -->
+
+<ng-template #content let-modal>
+
+    <div class="modal-body fav-model">
+        <div class="text-center ">
+            <h3 class=""> Create your own favorite Folder</h3>
+        </div>
+        <form [formGroup]="favForm">
+            <div class="form-group">
+                <label>Name</label>
+                <div>
+                  <input type="text" formControlName="favName" placeholder="Folder Name" maxlength="30">
+               </div>
+            </div>
+            <div class="form-group">
+                <label>Select Folder</label>
+                <div>
+                    <select formControlName="selectFolder" >
+                      <option value="" disabled>Select Folder</option>
+                      <option *ngFor="let data of FavList" [value]="data?.id"
+                      >{{ data?.folder_name}}</option>
+                    </select>
+                  </div>
+            </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 pt-3 text-center">
+                        <button class="sq-btn" type="submit" tabindex="0">Add</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+</ng-template>
+
+
+
+
+
+<ng-template #longContent let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <form [formGroup]="searchForm" (ngSubmit)= "search()">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Filters</h3>
+            </div>
+            <div class="col-md-12">
+                <label>Category</label>
+                <select formControlName="category">
+                    <!-- <option>{{popupdata.name}}</option> -->
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label>Sub Category</label>
+                <select formControlName="subCategory">
+                    <option *ngFor="let super of subcategory" [value]= "super.id">{{super.name}}</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label>Service</label>
+                <!-- <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [data]="dropdownList"
+                     [settings]="dropdownSettings" (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)">
+                </ng-multiselect-dropdown> -->
+                <select formControlName="services">
+                    <option *ngFor="let service of servicelist" [value]= "service.id">{{service.service_name}}</option>
+                </select>
+            </div>
+
+
+            <div class="col-md-12">
+                <label>Hourly Rate</label>
+                <!-- <select>
+                    <option>Hourly</option>
+                </select> -->
+            </div>
+            <div class="col-md-12 text-right range">
+                <h6>R {{rangeValues[0] + ' - ' + rangeValues[1]}}</h6>
+                <p-slider [(ngModel)]="val"  formControlName="hourRate" [style]="{'width':'100%'}"  [min]="0" [max]="100" (onChange)="handleChange($event)"></p-slider>
+            </div>
+            <div class="col-md-12">
+                <label>Fixed Rate</label>
+                <!-- <select>
+                    <option>Hourly</option>
+                </select> -->
+            </div>
+            <div class="col-md-12 text-right range">
+                <h6>R {{rangeValues1[0] + ' - ' + rangeValues1[1]}}</h6>
+                <p-slider [(ngModel)]="rangeValues1" formControlName="fixedRate" [style]="{'width':'100%'}" [min]="0" [max]="100"></p-slider>
+            </div>
+
+
+
+            <div class="col-lg-12 col-md-12 mb-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 book-d">
+                        <label>Booking Date</label>
+                            <div class="form-group">
+                              <div class="input-group book-d">
+                                <input class="form-control" formControlName="bookingDate"
+                                       name="dp" ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                    <!-- <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                        <label>Booking Date</label>
+                        <div class="form-group">
+                            <div class="input-group book-d">
+                              <input class="form-control"
+                                     name="dp1"  ngbDatepicker #d1="ngbDatepicker">
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
+                              </div>
+                            </div>
+
+                    </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class=" col-md-12 mb-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Start Time</label>
+                                <ngb-timepicker [(ngModel)]="time" [meridian]="meridian" formControlName="startTime"></ngb-timepicker>
+                    </div>
+
+                    <div class="col-md-6">
+                    <label>End Time</label>
+                        
+                            <ngb-timepicker [(ngModel)]="time1" [meridian]="meridian1" formControlName="endTime"></ngb-timepicker>
+                    
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-12">
+                <label>IWorker Category</label>
+                <select formControlName="iworkerCategory">
+                    <option>Super Cleaner</option>
+                </select>
+            </div>
+            <div class="col-md-12 mb-4">
+                <label>Sorting</label>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="radiobox-container">Price (High to Low)
+                            <input type="radio" name="sorting" formControlName="sorting">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="radiobox-container">Price (Low to High)
+                            <input type="radio"  name="sorting" formControlName="sorting">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="radiobox-container">Rating
+                            <input type="radio"  name="sorting" formControlName="sorting">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="cancel-btn w-100 mb-3" (click)="modal.close('Close click')">Cancel</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="green-btn w-100 mb-3">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</ng-template>

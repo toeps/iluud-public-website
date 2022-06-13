@@ -1,0 +1,95 @@
+@import "../../../../styles.scss";
+
+.profile {
+  padding: 56px 0;
+
+  .profile-card {
+    .profile-img {
+      margin-left: 30px;
+      width: 139px;
+      height: 140px;
+      border: solid 3px #f9c957;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    label {
+      font-family: "AvenirLTStd-Book";
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.44px;
+      color: #858585;
+    }
+
+    P {
+      font-family: $abold;
+      text-align: left;
+      font-size: 17px !important;
+      color: #2c2c2c;
+    }
+
+  }
+
+  .edit-btn {
+    margin-top: 50px;
+  }
+
+  .pay-text {
+    color: #34c3bd !important;
+  }
+}
+
+.mb-20 {
+  margin-bottom: 15px;
+}
+
+@media(max-width:992px) {
+  .profile {
+    padding: 50px 0 70px;
+
+    label {
+      font-size: 16px !important;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .edit-btn {
+      margin-top: 40px;
+
+
+
+
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .edit-btn {
+    margin-top: 30px;
+  }
+
+  .mb-20 {
+    margin-bottom: 12px;
+  }
+}
+
+@media(max-width: 578px) {
+  .profile {
+    padding: 40px 0 50px;
+
+    .edit-btn {
+      margin-top: 20px;
+      font-size: 20px;
+      padding: 15px 43px;
+      border-radius: 22px;
+      border: 0;
+      text-align: center;
+    }
+  }
+
+  .mb-20 {
+    margin-bottom: 10px;
+  }
+}

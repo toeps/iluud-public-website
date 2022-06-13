@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36.004" height="24.003" viewBox="0 0 36.004 24.003">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__credit-card_2_" data-name="credit-card(2)" transform="translate(0 -85.333)">
+        <g id="prefix__Group_25603" data-name="Group 25603" transform="translate(0 85.333)">
+            <g id="prefix__Group_25602" data-name="Group 25602">
+                <path id="prefix__Path_8847" d="M32.254 85.333H3.75A3.756 3.756 0 000 89.083v16.5a3.756 3.756 0 003.75 3.75h28.5a3.756 3.756 0 003.75-3.75v-16.5a3.756 3.756 0 00-3.746-3.75zm2.25 20.252a2.253 2.253 0 01-2.25 2.25H3.75a2.253 2.253 0 01-2.25-2.25v-16.5a2.253 2.253 0 012.25-2.25h28.5a2.253 2.253 0 012.25 2.25v16.5z" class="prefix__cls-1" data-name="Path 8847" transform="translate(0 -85.333)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_25605" data-name="Group 25605" transform="translate(0 89.834)">
+            <g id="prefix__Group_25604" data-name="Group 25604">
+                <path id="prefix__Path_8848" d="M35.254 149.333H.75a.75.75 0 00-.75.75v4.5a.75.75 0 00.75.75h34.5a.75.75 0 00.75-.75v-4.5a.751.751 0 00-.746-.75zm-.75 4.5H1.5v-3h33v3z" class="prefix__cls-1" data-name="Path 8848" transform="translate(0 -149.333)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_25607" data-name="Group 25607" transform="translate(4.501 100.335)">
+            <g id="prefix__Group_25606" data-name="Group 25606">
+                <path id="prefix__Path_8849" d="M73.751 298.667h-9a.75.75 0 100 1.5h9a.75.75 0 100-1.5z" class="prefix__cls-1" data-name="Path 8849" transform="translate(-64 -298.667)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_25609" data-name="Group 25609" transform="translate(4.501 103.335)">
+            <g id="prefix__Group_25608" data-name="Group 25608">
+                <path id="prefix__Path_8850" d="M73.751 341.333h-9a.75.75 0 100 1.5h9a.75.75 0 100-1.5z" class="prefix__cls-1" data-name="Path 8850" transform="translate(-64 -341.333)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_25611" data-name="Group 25611" transform="translate(25.503 98.835)">
+            <g id="prefix__Group_25610" data-name="Group 25610">
+                <path id="prefix__Path_8851" d="M366.417 277.333h-1.5a2.253 2.253 0 00-2.25 2.25v1.5a2.253 2.253 0 002.25 2.25h1.5a2.253 2.253 0 002.25-2.25v-1.5a2.253 2.253 0 00-2.25-2.25zm.75 3.75a.75.75 0 01-.75.75h-1.5a.75.75 0 01-.75-.75v-1.5a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75z" class="prefix__cls-1" data-name="Path 8851" transform="translate(-362.667 -277.333)"/>
+            </g>
+        </g>
+    </g>
+</svg>

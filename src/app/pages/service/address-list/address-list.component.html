@@ -1,0 +1,82 @@
+<section class="fav-folder">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row justify-content-between tabset">
+                <div class="col-md-12">
+                    <div>
+                                <div class="row justify-content-between folder-name no-gutters">
+                                    <div class="mr-5">
+                                        <div class="datatype">
+                                            <input 
+                                            maxlength="20"
+                                            type="text"
+                                            maxlength="100"
+                                            class="searchform"
+                                            placeholder="Search Location"
+                                            autocorrect="off"
+                                            autocapitalize="off"
+                                            spellcheck="off"
+                                            #search1
+                                            (keydown.space)="$event.preventDefault()"
+                                            >
+                                        </div>
+                                        <div class="datatype">
+                                            <img src="assets/images/svg/search-1.svg" class="folder" />
+                                        </div>
+                                        <div class="datatype">
+                                            <p class="m-0"  style="cursor: pointer; font-size: 30px;" [routerLink]="['/service']" [queryParams]="{ id: WorkerID, rate: WorkerRate }" routerLinkActive="router-link-active"  >Cancel</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div>
+                                    <div>
+                                        <div>
+                                            <img src="assets/images/svg/cursor.svg" class="cursorimg" style="cursor: pointer;" [routerLink]="['/user']" routerLinkActive="router-link-active">
+                                            <label style="cursor: pointer;" [routerLink]="['/user']" routerLinkActive="router-link-active" >Use your current Locations</label>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="row justify-content-between align-items-center no-gutters search">
+                                    <div class="row no-gutters align-items-center justify-content-start">
+                                        <div class="row no-gutters align-items-center mr-5">
+                                            <div>
+                                                <p class="m-0" style="size: 20px; font-weight: bold;">Saved Locations</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" *ngFor= "let data of addDetails" style="cursor: pointer;" (click)= "sendAddress(data)">
+                                    <div class="col-lg-12 col-md-12 align-items-center justify-content-between details d-flex flex-wrap">
+                                        <div class="clearfix">
+                                            <div class="datatype">
+                                                <div *ngIf= "data?.type =='home'"> <img src="assets/images/svg/house.svg" class="imageset"></div>
+                                                <div *ngIf= "data?.type =='work'">  <img src="assets/images/svg/bag.svg" class="imageset"> </div>
+                                                <div *ngIf= "data?.type =='other'">  <img src="assets/images/svg/how-location.svg" class="imageset"></div>
+                                            </div>
+                                            <div class="datatype">
+                                                <div>
+                                                    <h1>
+                                                        {{data?.type | titlecase}}
+                                                    </h1> 
+                                                </div>
+                                                <div>
+                                                    <h4 class="m-0">
+                                                    {{data?.building}},{{data?.show_address}},{{data?.suburb}},{{data?.city}}
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+ 

@@ -1,0 +1,31 @@
+<section class="header-banner">
+    <div class="container-outer">
+        <div class="container-inner text-center">
+            <div>
+                <h1>Find Your Local iLuuder</h1>
+                <p class="mb-0">Get instant access to reliable and affordable services</p>
+                <form>
+                    <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="row mb-4">
+                            <div class="col-md-6 offset-md-0 col-sm-10 offset-sm-1 col-12">
+                                <input [routerLink]="['/user/search']" routerLinkActive="router-link-active"  class="w-100" placeholder="Where">
+                            </div>
+                            <div class="col-md-6 offset-md-0 col-sm-10 offset-sm-1 col-12">
+                                <input class="w-100" [routerLink]="['/user/searchworker']" routerLinkActive="router-link-active"  placeholder="Where">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-4 col-sm-6 col-12">
+                                <button type="button">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>  
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

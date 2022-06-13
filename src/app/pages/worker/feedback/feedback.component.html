@@ -1,0 +1,83 @@
+<section class="feedback">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row justify-content-center">
+                <h1>Feedback</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="profile-details">
+                        <img [src]="profileData?.image" class="img-fluid profile-img" />
+                        <h3>{{profileData?.name}}</h3>
+                        <p>{{profileData?.desc}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row service-details">
+                <div class="col-md-3 col-sm-6 col-6">
+                    <h4>{{profileData?.name}}</h4>
+                    <p>iWorker Name</p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6">
+                    <h4>{{profileData?.serviceDate}}</h4>
+                    <p>Service Date</p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6">
+                    <h4>{{profileData?.serviceTime}}</h4>
+                    <p>Time</p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6">
+                    <h4>{{profileData?.serviceType}}</h4>
+                    <p>Services Done</p>
+                </div>
+            </div>
+            <div class="row ratings">
+                <form [formGroup]="feedbackForm" (ngSubmit)= "feedbackSubmit()">
+                <div class="col-md-12">
+                    <h3>How did you like the IWorker? Please provide your valuable feedback.</h3>
+                </div>
+                <div class="col-md-12">
+                    <h2>Was the iWorker on time?</h2>
+                    <!-- <p-rating [(ngModel)]="val" [cancel]="false"></p-rating> -->
+                    <p-rating formControlName="control1" [cancel]="false"></p-rating>
+                </div>
+                <div class="col-md-12">
+                    <h2>Was the iWorker friendly professional?</h2>
+                    <p-rating formControlName="control2" [cancel]="false"></p-rating>
+                </div>
+                <div class="col-md-12">
+                    <h2>Did the iWorker complete the job successfully?</h2>
+                    <p-rating formControlName="control3" [cancel]="false"></p-rating>
+                </div>
+                <div class="col-md-12">
+                    <h2>Were you satisfied with the overall performance?</h2>
+                    <p-rating formControlName="control4" [cancel]="false"></p-rating>
+                </div>
+                <div class="col-md-12">
+                    <h2>Rate your iWorker?</h2>
+                    <p-rating formControlName="control5" [cancel]="false"></p-rating>
+                </div>
+                <div class="col-md-12">
+                    <label>Feedback</label>
+                    <textarea formControlName="feedback" maxlength="1000" placeholder="Please Type Here"></textarea>
+                    <div *ngIf="submitted && values.feedback.errors" class="text-danger">
+                        <div *ngIf="values.feedback.errors.required">
+                            Feedback Reason is required
+                        </div>
+                        <div *ngIf="values.feedback.errors.maxlength">
+                          Maximum Length is 1000.
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-end">
+                        <div class="col-md-2">
+                            <button type="submit" class="green-btn w-100">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>

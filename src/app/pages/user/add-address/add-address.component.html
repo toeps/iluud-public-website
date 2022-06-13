@@ -1,0 +1,345 @@
+<section class="location">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row align-items-center heading">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-5">
+                    <div class="row mb-3 no-gutters align-items-center back-btn justify-content-center"
+                        [routerLink]="['/user/search']" routerLinkActive="router-link-active">
+                        <div>
+                            <img src="assets/images/svg/back-arrow.svg" class="img-fluid" />
+                        </div>
+                        <div>
+                            <h3>Back</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-12 text-center">
+                    <h1>Add Address</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="row text-center flex-wrap justify-content-around">
+                            <div class="mb-2">
+                                <h2>Save this location as</h2>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 add-location">
+                    <ngb-tabset [destroyOnHide]="false" class="w-100">
+                        <div class=" justify-content-between ">
+                            <div>
+                                <ngb-tab (selectTab)="check('home')">
+                                    <ng-template ngbTabTitle>
+                                        <div class="d-flex align-items-start">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="48.923" height="46.5"
+                                                    viewBox="0 0 48.923 46.5">
+                                                    <defs>
+                                                    </defs>
+                                                    <g id="empire-state-building" transform="translate(0 -12.675)">
+                                                        <g id="Group_25717" data-name="Group 25717"
+                                                            transform="translate(0 12.676)">
+                                                            <path id="Path_8899"
+                                                                d="M48.1 33.335l-4.133-3.766V17.082a1.439 1.439 0 0 0-1.439-1.439h-9.947a1.439 1.439 0 0 0-1.439 1.439v.8l-4.991-4.548a2.5 2.5 0 0 0-3.379 0l-21.95 20a2.509 2.509 0 0 0 1.69 4.366h3.505v20.037a1.439 1.439 0 0 0 1.439 1.439h12.031a1.439 1.439 0 0 0 1.439-1.439V45.57H28v12.167a1.439 1.439 0 0 0 1.439 1.439h12.027a1.439 1.439 0 0 0 1.434-1.439V37.7h3.506a2.509 2.509 0 0 0 1.69-4.363zm-6.634 1.485a1.439 1.439 0 0 0-1.439 1.439V56.3h-9.153V44.131a1.439 1.439 0 0 0-1.439-1.439h-9.948a1.439 1.439 0 0 0-1.439 1.439V56.3H8.895V36.259a1.439 1.439 0 0 0-1.439-1.439H3.463l21-19.133 7.149 6.513a1.439 1.439 0 0 0 2.408-1.063v-2.616h7.071V30.2a1.439 1.439 0 0 0 .47 1.063l3.9 3.553z"
+                                                                class="cls-1" data-name="Path 8899"
+                                                                transform="translate(0 -12.676)" />
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h5> Home </h5>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ngbTabContent>
+                                        <form [formGroup]="addressForm" (ngSubmit)= "addressSubmit()">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Building/Apartment</label>
+                                                     <input type="text" formControlName="appartment" maxlength="30" placeholder="Building/Apartment">
+                                                      <div *ngIf="submitted && values.appartment.errors" class="text-danger">
+                                                        <div *ngIf="values.appartment.errors.required">
+                                                            Building/Apartment is required
+                                                        </div>
+                                                        <div *ngIf="values.appartment.errors.maxlength">
+                                                          Maximum Length is 30.
+                                                        </div>
+                                                      </div>
+
+                                                    <label>Street Address</label>
+                                                     <input type="text" formControlName="streetAddress" maxlength="30" placeholder="Street Address">
+                                                      <div *ngIf="submitted && values.streetAddress.errors" class="text-danger">
+                                                        <div *ngIf="values.streetAddress.errors.required">
+                                                            Street Address is required
+                                                        </div>
+                                                        <div *ngIf="values.streetAddress.errors.maxlength">
+                                                          Maximum Length is 30.
+                                                        </div>
+                                                      </div>
+
+                                                    <label>Suburb</label>
+                                                     <input type="text" formControlName="suburb" maxlength="30" placeholder="Suburb">
+                                                      <div *ngIf="submitted && values.suburb.errors" class="text-danger">
+                                                        <div *ngIf="values.suburb.errors.required">
+                                                            Suburb is required
+                                                        </div>
+                                                        <div *ngIf="values.suburb.errors.maxlength">
+                                                          Maximum Length is 30.
+                                                        </div>
+                                                      </div>
+
+                                                    <label>City </label>
+                                                     <input type="text" formControlName="city" maxlength="30" placeholder="city">
+                                                      <div *ngIf="submitted && values.city.errors" class="text-danger">
+                                                        <div *ngIf="values.city.errors.required">
+                                                            City Name is required
+                                                        </div>
+                                                        <div *ngIf="values.city.errors.maxlength">
+                                                          Maximum Length is 30.
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-outer">
+                                                <div class="container-inner">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-4 text-center">
+                                                                <button type="submit" class="sq-btn">Confirm</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </ng-template>
+                                </ngb-tab>
+                            </div>
+
+                            <div>
+                                <ngb-tab (selectTab)="check('office')">
+                                    <ng-template ngbTabTitle>
+                                        <div class="d-flex align-items-start">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="47.851" height="41.326"
+                                                    viewBox="0 0 47.851 41.326">
+                                                    <path
+                                                        d="M45.677 22.838a1.027 1.027 0 0 0-1.087 1.087v14.14a1.027 1.027 0 0 1-1.087 1.087H4.351a1.027 1.027 0 0 1-1.087-1.087V23.926a1.087 1.087 0 0 0-2.175 0v14.139a3.2 3.2 0 0 0 3.263 3.263h39.15a3.2 3.2 0 0 0 3.263-3.263V23.926a1.027 1.027 0 0 0-1.088-1.088z"
+                                                        data-name="Path 8900" />
+                                                    <path
+                                                        d="M44.589 7.613H3.263A3.2 3.2 0 0 0 0 10.876v6.96a3.265 3.265 0 0 0 2.5 3.154l17.074 3.806v3.48a1.027 1.027 0 0 0 1.087 1.087h6.525a1.027 1.027 0 0 0 1.087-1.087v-3.48l17.074-3.806a3.265 3.265 0 0 0 2.5-3.154v-6.96a3.2 3.2 0 0 0-3.258-3.263zM26.1 27.188h-4.35v-4.35h4.35zm19.575-9.353a1.059 1.059 0 0 1-.87 1.088l-16.53 3.7v-.87a1.027 1.027 0 0 0-1.087-1.088h-6.525a1.027 1.027 0 0 0-1.087 1.088v.87l-16.53-3.7a1.059 1.059 0 0 1-.87-1.088v-6.96a1.027 1.027 0 0 1 1.087-1.088h41.326a1.027 1.027 0 0 1 1.087 1.088z"
+                                                        data-name="Path 8901" />
+                                                    <path
+                                                        d="M29.363 0H18.488a3.2 3.2 0 0 0-3.263 3.263V4.35a1.087 1.087 0 1 0 2.175 0V3.263a1.027 1.027 0 0 1 1.087-1.087h10.875a1.027 1.027 0 0 1 1.088 1.087V4.35a1.087 1.087 0 1 0 2.175 0V3.263A3.2 3.2 0 0 0 29.363 0z"
+                                                        data-name="Path 8902" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h5>Office</h5>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ngbTabContent>
+                                        <form [formGroup]="officeForm" (ngSubmit)= "officeSubmit()">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Building/Apartment</label>
+                                                    <input type="text" formControlName="officeAppartment" maxlength="30" placeholder="Building/Apartment">
+                                                     <div *ngIf="submitted && officeValue.officeAppartment.errors" class="text-danger">
+                                                       <div *ngIf="officeValue.officeAppartment.errors.required">
+                                                           Building/Apartment is required
+                                                       </div>
+                                                       <div *ngIf="officeValue.officeAppartment.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+
+                                                   <label>Street Address</label>
+                                                    <input type="text" formControlName="officeStreetAddress" maxlength="30" placeholder="Street Address">
+                                                     <div *ngIf="submitted && officeValue.officeStreetAddress.errors" class="text-danger">
+                                                       <div *ngIf="officeValue.officeStreetAddress.errors.required">
+                                                           Street Address is required
+                                                       </div>
+                                                       <div *ngIf="officeValue.officeStreetAddress.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+
+                                                   <label>Suburb</label>
+                                                    <input type="text" formControlName="officeSuburb" maxlength="30" placeholder="Suburb">
+                                                     <div *ngIf="submitted && officeValue.officeSuburb.errors" class="text-danger">
+                                                       <div *ngIf="officeValue.officeSuburb.errors.required">
+                                                           Suburb is required
+                                                       </div>
+                                                       <div *ngIf="officeValue.officeSuburb.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+
+                                                   <label>City </label>
+                                                    <input type="text" formControlName="officeCity" maxlength="30" placeholder="city">
+                                                     <div *ngIf="submitted && officeValue.officeCity.errors" class="text-danger">
+                                                       <div *ngIf="officeValue.officeCity.errors.required">
+                                                           City Name is required
+                                                       </div>
+                                                       <div *ngIf="officeValue.officeCity.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-outer">
+                                                <div class="container-inner">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-4 text-center">
+                                                                <button type="submit" class="sq-btn">Confirm</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </ng-template>
+                                </ngb-tab>
+                            </div>
+
+                            <div>
+                                <ngb-tab (selectTab)="check('other')">
+                                    <ng-template ngbTabTitle>
+                                        <div class="d-flex align-items-start">
+                                            <div class="pin">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="42.667"
+                                                    viewBox="0 0 30 42.667">
+                                                    <g id="pin_2_" data-name="pin(2)" transform="translate(-76)">
+                                                        <g id="Group_25776" data-name="Group 25776"
+                                                            transform="translate(76)">
+                                                            <g id="Group_25775" data-name="Group 25775"
+                                                                transform="translate(0)">
+                                                                <path id="Path_8909" data-name="Path 8909"
+                                                                    d="M91,0A15,15,0,0,0,78.239,22.888L90.146,42.076a1.25,1.25,0,0,0,1.062.591h.01a1.25,1.25,0,0,0,1.063-.608l11.6-19.374A15,15,0,0,0,91,0Zm10.739,21.4L91.189,39.015,80.364,21.571a12.508,12.508,0,1,1,21.375-.169Z"
+                                                                    transform="translate(-76)" />
+                                                            </g>
+                                                        </g>
+                                                        <g id="Group_25778" data-name="Group 25778"
+                                                            transform="translate(83.5 7.5)">
+                                                            <g id="Group_25777" data-name="Group 25777"
+                                                                transform="translate(0)">
+                                                                <path id="Path_8910" data-name="Path 8910"
+                                                                    d="M173.5,90a7.5,7.5,0,1,0,7.5,7.5A7.509,7.509,0,0,0,173.5,90Zm0,12.517a5.017,5.017,0,1,1,5.008-5.017A5.02,5.02,0,0,1,173.5,102.517Z"
+                                                                    transform="translate(-166 -90)" />
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h5>Others</h5>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ngbTabContent>
+                                        <form [formGroup]="otherForm" (ngSubmit)= "otherSubmit()">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Other</label>
+                                                    <input type="text" formControlName="other" maxlength="30" placeholder="Building/Apartment">
+                                                     <div *ngIf="submitted && otherValue.other.errors" class="text-danger">
+                                                       <div *ngIf="otherValue.other.errors.required">
+                                                           Other Field is required
+                                                       </div>
+                                                       <div *ngIf="otherValue.other.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+
+                                                    <label>Building/Apartment</label>
+                                                    <input type="text" formControlName="otherAppartment" maxlength="30" placeholder="Building/Apartment">
+                                                     <div *ngIf="submitted && otherValue.otherAppartment.errors" class="text-danger">
+                                                       <div *ngIf="otherValue.otherAppartment.errors.required">
+                                                           Building/Apartment is required
+                                                       </div>
+                                                       <div *ngIf="otherValue.otherAppartment.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+
+                                                   <label>Street Address</label>
+                                                    <input type="text" formControlName="otherStreetAddress" maxlength="30" placeholder="Street Address">
+                                                     <div *ngIf="submitted && otherValue.otherStreetAddress.errors" class="text-danger">
+                                                       <div *ngIf="otherValue.otherStreetAddress.errors.required">
+                                                           Street Address is required
+                                                       </div>
+                                                       <div *ngIf="otherValue.otherStreetAddress.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+
+                                                   <label>Suburb</label>
+                                                    <input type="text" formControlName="otherSuburb" maxlength="30" placeholder="Suburb">
+                                                     <div *ngIf="submitted && otherValue.otherSuburb.errors" class="text-danger">
+                                                       <div *ngIf="otherValue.otherSuburb.errors.required">
+                                                           Suburb is required
+                                                       </div>
+                                                       <div *ngIf="otherValue.otherSuburb.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+
+                                                   <label>City </label>
+                                                    <input type="text" formControlName="otherCity" maxlength="30" placeholder="city">
+                                                     <div *ngIf="submitted && otherValue.otherCity.errors" class="text-danger">
+                                                       <div *ngIf="otherValue.otherCity.errors.required">
+                                                           City Name is required
+                                                       </div>
+                                                       <div *ngIf="otherValue.otherCity.errors.maxlength">
+                                                         Maximum Length is 30.
+                                                       </div>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-outer">
+                                                <div class="container-inner">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-4 text-center">
+                                                                <button type="submit" class="sq-btn">Confirm</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </ng-template>
+                                </ngb-tab>
+                            </div>
+                        </div>
+                    </ngb-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container-outer">
+        <div class="container-inner">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label>Choose a Location</label>
+                </div>
+            </div>
+        </div>  
+    </div> -->
+    <!-- <div class="google-map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.735934370823!2d77.3705086499463!3d28.60769769187067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce52cf4b09d79%3A0x310065030196acf3!2sNoida%20Sector%2059%20Metro%20Station!5e0!3m2!1sen!2sin!4v1582891213792!5m2!1sen!2sin"
+            frameborder="0" style="border:0;" allowfullscreen="">
+        </iframe>
+    </div> -->
+    <!-- <div class="container-outer">
+        <div class="container-inner">
+            <div class="row justify-content-center">
+                <div class="col-md-4 text-center">
+                    <button type="submit" class="sq-btn" [routerLink]="['/service/details']"
+                        routerLinkActive="router-link-active">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!-- </form> -->
+</section>

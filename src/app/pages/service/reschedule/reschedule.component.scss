@@ -1,0 +1,88 @@
+@import "../../../../styles.scss";
+
+.res {
+  padding: 56px 0;
+  .heading {
+    margin-bottom: 70px;
+    .back-btn {
+      margin: 0;
+    }
+  }
+  h4 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: "AvenirLTStd-Book";
+    margin-bottom: 40px;
+  }
+  h4 {
+    font-size: 28px;
+    // font-weight: 900;
+    font-family: "AvenirLTStd-Book";
+    margin-bottom: 40px;
+  }
+
+  textarea {
+    height: 200px;
+  }
+  form {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: $white-color;
+    padding: 32px 20px;
+    margin-bottom: 50px;
+  }
+}
+
+@media(max-width:992px){
+  .res{ 
+    .heading {
+    margin-bottom: 60px;
+}
+form{
+  margin-bottom: 40px;
+}
+}
+}
+
+
+@media(max-width:768px){
+  .res{ 
+    .heading {
+    margin-bottom: 45px;
+} }
+}
+
+
+@media(max-width:1100px) and (min-width:992px){
+  select{
+  
+    padding: 14px 15px;
+    background: url(/assets/images/svg/select.svg) no-repeat right 50% !important;
+    -webkit-appearance: none;
+    background-position-x: calc(100% - 20px) !important;
+    background-size: 14px 14px !important;
+}
+}
+@media(max-width:650px) and (min-width:550px){
+  select{
+  
+    padding: 14px 15px;
+    background: url(/assets/images/svg/select.svg) no-repeat right 50% !important;
+    -webkit-appearance: none;
+    background-position-x: calc(100% - 20px) !important;
+    background-size: 14px 14px !important;
+}
+}
+
+@media(max-width:568px){
+  .res{ 
+    .heading {
+    margin-bottom: 30px;
+}
+form{
+  margin-bottom: 40px;
+} }
+}

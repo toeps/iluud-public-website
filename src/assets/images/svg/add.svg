@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#34c3bd}
+        </style>
+    </defs>
+    <g id="prefix__Group_25753" data-name="Group 25753" transform="translate(-1100 -394)">
+        <g id="prefix__Ellipse_176" data-name="Ellipse 176" transform="translate(1100 394)" style="fill:#fff;stroke:#34c3bd">
+            <circle cx="11" cy="11" r="11" style="stroke:none"/>
+            <circle cx="11" cy="11" r="10.5" style="fill:none"/>
+        </g>
+        <g id="prefix__Group_25752" data-name="Group 25752" transform="translate(19.542 8.542)">
+            <rect id="prefix__Rectangle_1899" width="2" height="12" class="prefix__cls-2" data-name="Rectangle 1899" rx="1" transform="translate(1090.458 390.458)"/>
+            <rect id="prefix__Rectangle_1900" width="2" height="12" class="prefix__cls-2" data-name="Rectangle 1900" rx="1" transform="rotate(-90 741.458 -344)"/>
+        </g>
+    </g>
+</svg>

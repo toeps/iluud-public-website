@@ -1,0 +1,108 @@
+@import "../../../../styles.scss";
+
+.location {
+  padding: 56px 0;
+
+  .heading {
+    margin: 0px 0 70px;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 900;
+      font-family: "AvenirLTStd-Book";
+      margin-bottom: 0px;
+    }
+
+    .back-btn {
+      margin: 0;
+    }
+  }
+
+  .user-card {
+    // border-radius: 21px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: $white-color;
+    padding: 32px 0;
+    margin-bottom: 70px;
+
+    h2 {
+      font-size: 18px !important;
+      font-weight: 500;
+      letter-spacing: 0.44px;
+      font-family: $abold;
+      margin-bottom: 10px;
+      /* max-width: 125px; */
+      text-overflow: ellipsis;
+      /* width: 100%; */
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    h6 {
+      font-family: "AvenirLTStd-Book";
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.44px;
+      color: #858585;
+    }
+  }
+
+  .google-map {
+    iframe {
+      width: 100%;
+      height: 557px;
+    }
+
+    margin-bottom: 60px;
+  }
+}
+
+@media(max-width: 992px) {
+  .location {
+    .heading {
+      margin: 0px 0 50px;
+
+      h1 {
+        font-size: 25px !important;
+      }
+    }
+
+  }
+
+  .add-location {
+    .nav-tabs {
+      .nav-item {
+        flex: 1 0 30%;
+      }
+    }
+  }
+
+}
+
+@media(max-width: 768px) {
+  .location {
+    .heading {
+      margin: 0px 0 40px;
+
+      h1 {
+        font-size: 20px !important;
+      }
+    }
+  }
+}
+
+@media(max-width: 567px) {
+  .location {
+    .heading {
+      margin: 0px 0 30px;
+    }
+
+    .user-card {
+      h2 {
+        font-size: 16px !important;
+        font-weight: 500;
+        margin-bottom: 6px !important;
+      }
+    }
+  }
+}

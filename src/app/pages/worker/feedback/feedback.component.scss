@@ -1,0 +1,82 @@
+@import "../../../../styles.scss";
+
+.feedback {
+  padding: 56px 0;
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: "AvenirLTStd-Book";
+    margin-bottom: 50px;
+  }
+  .profile-details {
+    .profile-img {
+      width: 139px;
+      height: 140px;
+      border: solid 3px #f9c957;
+      border-radius: 50%;
+      margin-bottom: 17px;
+    }
+    h3 {
+      font-family: $abold;
+      font-size: 25px;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-family: "AvenirLTStd-Book";
+      font-size: 16px;
+      font-weight: 500;
+      color: #2c2c2c;
+      margin-bottom: 25px;
+    }
+  }
+  .service-details {
+    margin-bottom: 50px;
+    h4 {
+      font-size: 18px;
+      font-weight: 900;
+      font-family: $abold;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.36;
+      letter-spacing: 0.44px;
+      color: #858585;
+      font-family: $alight;
+    }
+  }
+  .ratings {
+    h3 {
+      font-size: 25px;
+      letter-spacing: 0.7px;
+      margin-bottom: 30px;
+      font-family: $abold;
+    }
+    h2 {
+      font-size: 28px;
+      font-family: $alight;
+      margin-bottom: 10px;
+    }
+  }
+  label {
+    margin-top: 30px;
+  }
+  textarea {
+    height: 200px;
+  }
+}
+
+
+@media(max-width:568px){
+//   .feedback{ 
+//     .ui-rating { 
+//       .ui-rating-icon {
+//     font-size: 30px !important;
+// }
+// } }
+.feedback {
+  h1{
+  margin-bottom: 30px;
+} }
+ }

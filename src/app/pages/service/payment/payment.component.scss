@@ -1,0 +1,187 @@
+@import "../../../../styles.scss";
+
+.payment {
+  padding: 56px 0;
+
+  // .card-body {
+  //   padding: 0px !important;
+  // }
+
+  .pay-tab {
+    .credit-btn {
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      background-color: #fff;
+      font-family: Avenir;
+      font-size: 20px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.35;
+      letter-spacing: 0.4px;
+      text-align: left;
+      color: #000000;
+      min-width: 210px;
+      padding: 13px 24px;
+      border-radius: 0px;
+
+
+      &.active {
+        background-color: #49c3bd;
+        color: #fff;
+      }
+    }
+  }
+
+  .heading {
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: "AvenirLTStd-Book";
+    margin-bottom: 0;
+  }
+
+  .back-btn {
+    margin: 0;
+  }
+
+  .credit-active {
+    border-radius: 7px;
+    padding: 15px 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: $orange-color;
+    border: 1px solid $orange-color;
+
+    img {
+      margin-bottom: 13px;
+    }
+
+    label {
+      font-size: 9px;
+      font-weight: 500;
+      font-family: $amedium;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 900;
+      font-family: $abold;
+
+      &.card-num {
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .credit-inactive {
+    border-radius: 7px;
+    padding: 15px 20px;
+    width: 100%;
+    background-color: $white-color;
+    margin-bottom: 20px;
+    border: solid 1px #707070;
+
+    img {
+      margin-bottom: 13px;
+    }
+
+    label {
+      font-size: 9px;
+      font-weight: 500;
+      font-family: $amedium;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 900;
+      font-family: $abold;
+
+      &.card-num {
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .green-btn {
+    margin-bottom: 50px;
+
+    .pi-plus-circle {
+      font-size: 26px;
+      padding-top: 0px;
+    }
+
+    padding: 11px 50px;
+  }
+
+  form {
+    &.add-card {
+      h3 {
+        font-size: 27px;
+        font-weight: 900;
+        font-family: $abold;
+        margin-bottom: 25px;
+      }
+    }
+
+    button {
+      &.save-card {
+        margin-top: 30px !important;
+      }
+    }
+  }
+}
+
+@media(max-width:992px) {
+  .payment {
+    .heading {
+      margin-bottom: 35px;
+    }
+
+    .pay-tab {
+      .credit-btn {
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: #fff;
+        font-family: Avenir;
+        font-size: 15px !important;
+        font-weight: 500;
+        color: #000000;
+        min-width: 175px;
+        padding: 13px 15px !important;
+        border-radius: 0px;
+      }
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .payment {
+    .heading {
+      margin-bottom: 25px;
+    }
+
+    .pay-tab {
+      .credit-btn {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+}
+
+
+
+
+@media(max-width:568px) {
+  .payment {
+    .heading {
+      margin-bottom: 20px;
+    }
+  }
+}

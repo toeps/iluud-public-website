@@ -1,0 +1,60 @@
+<section class="cancel">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row align-items-center heading">
+                <div class="col-lg-2 col-md-3 col-sm-4  col-5">
+                    <div class="row mb-3 no-gutters align-items-center back-btn justify-content-center"
+                        [routerLink]="['/user']" routerLinkActive="router-link-active">
+                        <div>
+                            <img src="assets/images/svg/back-arrow.svg" class="img-fluid" />
+                        </div>
+                        <div>
+                            <h3>Back</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-12 text-center">
+                    <h1>Cancel Service</h1>
+                </div>
+            </div>
+            <form [formGroup]="cancelForm" (ngSubmit)="cancelBooking()">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 text-center">
+                        <h4>Please specify your reason for cancelling your iWorker</h4>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Reason</label>
+                        <select formControlName="reason">
+                            <option value="" >Select Reason</option>
+                            <option *ngFor="let data of list" [value]="data?.id">{{data.reason}}</option>
+                            <div  *ngIf="submitted && values.reason.errors" class="text-danger" >
+                              <div *ngIf="values.reason.errors.required">
+                                Reason is required
+                              </div>
+                            </div>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label>List your reason</label>
+                        <textarea formControlName="mainReason" placeholder="Detailed Reason Here" maxlength="1000"></textarea>
+                        <div *ngIf="submitted && values.mainReason.errors" class="text-danger" >
+                            <div *ngIf="values.mainReason.errors.required">
+                               Detailed Reason is required
+                            </div>
+                            <div *ngIf="values.mainReason.errors.maxlength">
+                               Maximum length is 1000.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row justify-content-end">
+                            <div class="col-md-3 text-right">
+                                <button type="submit" class="green-btn">Cancel Booking</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

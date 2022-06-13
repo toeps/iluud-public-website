@@ -1,0 +1,79 @@
+<section class="contact">
+    <form [formGroup]="contactForm" (ngSubmit)="contactSubmit()">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row align-items-center heading">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-5">
+                    <div class="row mb-3 no-gutters align-items-center back-btn justify-content-center"
+                        [routerLink]="['/user']" routerLinkActive="router-link-active">
+                        <div>
+                            <img src="assets/images/svg/back-arrow.svg" class="img-fluid" />
+                        </div>
+                        <div>
+                            <h3>Back</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-9 text-center">
+                    <h1>Contact Us</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>
+                        Name
+                    </label>
+                    <input type="text" formControlName="name" placeholder="Please Type Name" maxlength="30">
+                    <div *ngIf="submitted && values.name.errors" class="text-danger">
+                        <div *ngIf="values.name.errors.required">
+                            Name is required
+                        </div>
+                        <div *ngIf="values.name.errors.maxlength">
+                            Maximum Length is 30
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>
+                        Email Id
+                    </label>
+                    <input type="text" formControlName="email" placeholder="Email Address " maxlength="30">
+                    <div *ngIf="submitted && values.email.errors" class="text-danger">
+                        <div *ngIf="values.email.errors.required">
+                            Email Address is required
+                        </div>
+                        <div *ngIf="values.email.errors.maxlength">
+                            Maximum Length is 30
+                        </div>
+                        <div *ngIf="values.email.errors.pattern">
+                            Invalid Email Address
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Message</label>
+                    <textarea formControlName="message" placeholder="Type Your Message" maxlength="1000"></textarea>
+                    <div *ngIf="submitted && values.message.errors" class="text-danger">
+                        <div *ngIf="values.message.errors.required">
+                            Message is required
+                        </div>
+                        <div *ngIf="values.message.errors.maxlength">
+                            Maximum Length is 1000
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-4 col-sm-6 col-6 text-right">
+                            <button class="cancel-btn" [routerLink]="['/user']" routerLinkActive="router-link-active" >Cancel</button>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-6">
+                            <button type="submit" class="sq-btn">Confirm </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</section>

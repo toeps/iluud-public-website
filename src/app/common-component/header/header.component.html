@@ -1,0 +1,556 @@
+<header>
+    <div class="container-outer">
+        <div class="container-inner">
+            <nav class="row no-gutters align-items-center justify-content-between">
+                <div class="logo">
+                    <img src="assets/images/svg/logo.svg" class="img-fluid" />
+                </div>
+                <div class="nav-links">
+                    <div class="row no-gutters align-items-center justify-content-between">
+                        <div class="dis-none">iLuud For Business</div>
+                        <div (click)="openModal(signup, 'signup-modal')" class="pointer dis-none">Signup</div>
+                        <div (click)="openModal(login, 'login-modal')" class="pointer dis-none">Login</div>
+                        <div>
+                            <button pButton type="button" (click)="visibleSidebar2 = true" icon="pi pi-arrow-left"><img
+                                    src="assets/images/svg/menu-btn.svg" /></button></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- side menu bar starts here -->
+    <p-sidebar [(visible)]="visibleSidebar2" position="right" [dismissible]=true [baseZIndex]="10000">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="logo">
+                    <img src="assets/images/svg/logo.svg" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-12">
+                <div class="row no-gutters align-items-center link" (click)="navigate('/home')">
+                    <div class="mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24.118" height="19.193"
+                            viewBox="0 0 24.118 19.193">
+
+                            <g id="prefix__home_3_" data-name="home(3)" transform="translate(.001 -46.994)">
+                                <g id="prefix__Group_25660" data-name="Group 25660" transform="translate(-.001 46.994)">
+                                    <path id="prefix__Path_8878"
+                                        d="M74.315 120.939l-8.6 7.091a.2.2 0 0 1-.008.045.2.2 0 0 0-.008.045v7.18a.971.971 0 0 0 .957.958H72.4v-5.744h3.83v5.745h5.744a.972.972 0 0 0 .958-.958v-7.18a.211.211 0 0 0-.015-.089z"
+                                        class="prefix__cls-1" data-name="Path 8878"
+                                        transform="translate(-62.256 -117.065)" />
+                                    <path id="prefix__Path_8879"
+                                        d="M23.951 56.344l-3.276-2.723v-6.1a.461.461 0 0 0-.479-.479h-2.872a.46.46 0 0 0-.479.479v2.917L13.2 47.383a1.856 1.856 0 0 0-2.274 0L.166 56.344a.434.434 0 0 0-.166.321.484.484 0 0 0 .1.352l.927 1.107a.51.51 0 0 0 .314.165.556.556 0 0 0 .359-.1l10.352-8.632 10.358 8.627a.461.461 0 0 0 .314.1h.045a.511.511 0 0 0 .314-.164l.928-1.107a.484.484 0 0 0 .1-.352.436.436 0 0 0-.16-.317z"
+                                        class="prefix__cls-1" data-name="Path 8879"
+                                        transform="translate(.001 -46.994)" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h6 class="m-0">Home</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row no-gutters align-items-center link" (click)="navigate('/user/profile')">
+                    <div class="mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24.946" height="24.946"
+                            viewBox="0 0 24.946 24.946">
+                            <path
+                                d="M24.946 12.473a12.473 12.473 0 1 0-20.9 9.188l-.012.01.4.341c.026.022.055.04.081.062.215.178.438.347.664.511.073.053.147.106.222.158q.363.25.745.475l.167.1c.278.158.562.308.853.444l.064.029a12.361 12.361 0 0 0 3.017.955l.083.015c.328.057.66.1 1 .132l.123.01c.335.028.673.045 1.016.045s.675-.018 1.008-.044l.127-.01q.5-.046.988-.13l.085-.015a12.36 12.36 0 0 0 2.974-.932l.1-.047q.42-.2.821-.425l.2-.115c.244-.144.484-.294.717-.454.084-.057.166-.117.249-.177.2-.143.395-.291.585-.446.042-.034.088-.064.129-.1l.415-.347-.012-.01a12.441 12.441 0 0 0 4.091-9.223zm-24.039 0a11.566 11.566 0 1 1 19.236 8.647 3.4 3.4 0 0 0-.405-.244l-3.84-1.92a1 1 0 0 1-.559-.9v-1.345c.089-.11.183-.234.28-.371a9.243 9.243 0 0 0 1.187-2.324 1.646 1.646 0 0 0 .946-1.492v-1.607a1.65 1.65 0 0 0-.4-1.075V7.726a3.658 3.658 0 0 0-.854-2.66 5.105 5.105 0 0 0-4.022-1.437 5.107 5.107 0 0 0-4.025 1.436 3.659 3.659 0 0 0-.851 2.66v2.117a1.653 1.653 0 0 0-.4 1.075v1.608a1.65 1.65 0 0 0 .6 1.275 8.523 8.523 0 0 0 1.4 2.9v1.313a1.012 1.012 0 0 1-.527.888l-3.581 1.958a3.278 3.278 0 0 0-.341.216 11.538 11.538 0 0 1-3.844-8.602z"
+                                data-name="user(4)" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h6 class="m-0">My Profile</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row no-gutters align-items-center link" (click)="navigate('/user/bookings')">
+                    <div class="mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18.156" height="19.553"
+                            viewBox="0 0 18.156 19.553">
+                            <path
+                                d="M17.741 3.208a1.342 1.342 0 0 0-.982-.415h-1.4V1.746A1.681 1.681 0 0 0 14.85.513 1.681 1.681 0 0 0 13.617 0h-.7a1.681 1.681 0 0 0-1.233.513 1.681 1.681 0 0 0-.513 1.233v1.047h-4.19V1.746A1.681 1.681 0 0 0 6.47.513 1.681 1.681 0 0 0 5.237 0h-.7a1.681 1.681 0 0 0-1.233.513 1.681 1.681 0 0 0-.513 1.233v1.047h-1.4a1.342 1.342 0 0 0-.982.415 1.342 1.342 0 0 0-.415.982v13.966a1.416 1.416 0 0 0 1.4 1.4h15.365a1.416 1.416 0 0 0 1.4-1.4V4.19a1.343 1.343 0 0 0-.418-.982zM12.57 1.746a.336.336 0 0 1 .349-.349h.7a.336.336 0 0 1 .349.349v3.142a.336.336 0 0 1-.349.349h-.7a.336.336 0 0 1-.349-.349zm-8.38 0a.336.336 0 0 1 .349-.349h.7a.336.336 0 0 1 .349.349v3.142a.336.336 0 0 1-.349.349h-.7a.336.336 0 0 1-.349-.349zm12.569 16.41H1.397V6.983h15.362z"
+                                data-name="Path 8880" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h6 class="m-0">My Bookings</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row no-gutters align-items-center link" (click)="navigate('/user/favorite')">
+                    <div class="mr-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.458" height="18.609"
+                            viewBox="0 0 19.458 18.609">
+                            <path
+                                d="M10.668.584l2.195 4.447a1.048 1.048 0 0 0 .789.573l4.908.713a1.048 1.048 0 0 1 .581 1.787l-3.552 3.462a1.048 1.048 0 0 0-.3.927l.838 4.888a1.048 1.048 0 0 1-1.52 1.1l-4.389-2.307a1.049 1.049 0 0 0-.975 0l-4.391 2.312a1.048 1.048 0 0 1-1.52-1.1l.837-4.893a1.048 1.048 0 0 0-.3-.927L.317 8.104a1.048 1.048 0 0 1 .582-1.787l4.908-.713a1.048 1.048 0 0 0 .792-.573L8.789.584a1.047 1.047 0 0 1 1.879 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h6 class="m-0">Favourites</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button pButton type="button" (click)="visibleSidebar2 = false" style="display: none;" label="Cancel"
+            class="ui-button-secondary"></button>
+    </p-sidebar>
+</header>
+
+
+
+<!-- SignUp modal -->
+<ng-template #signup let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="d-flex align-items-start justify-content-between">
+            <div>
+                <h3>Let's get started</h3>
+                <p>Sign up & book your iWorker now.</p>
+            </div>
+            <div>
+                <a href="javascript:void(0)" (click)="openModal(login, 'login-modal')">
+                    Sign In
+                </a>
+            </div>
+        </div>
+        <form [formGroup]="signUpForm" (ngSubmit)= "submit()">
+
+        <div class="row mb-3">
+            <div class="col-4 profile">
+                <img bind-src= "profileLink ? profileLink:'assets/images/png/profile.png'" class="img-fluid" (click)= "file.click()"/>
+                <img src="assets/images/svg/cam.svg" class="img-fluid cam"  (click)="file.click()"/>
+                <input style="display: none;" type="file" #file (change)="selectFile($event)" >
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label>First Name</label>
+                    <input type="text" formControlName="firstName" maxlength="15" placeholder="First Name" (keypress)="alphabetOnly($event)">
+                    <div *ngIf="submitted && values.firstName.errors" class="text-danger">
+                        <div *ngIf="values.firstName.errors.required">
+                          First Name is required
+                        </div>
+                        <div *ngIf="values.firstName.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Last Name</label>
+                    <input type="text" formControlName="lastName" maxlength="15" placeholder="Last Name" (keypress)="alphabetOnly($event)">
+                    <div *ngIf="submitted && values.lastName.errors" class="text-danger">
+                        <div *ngIf="values.lastName.errors.required">
+                          Last Name is required
+                        </div>
+                        <div *ngIf="values.lastName.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Email ID</label>
+                    <input type="email" formControlName="emailId" maxlength="30" placeholder="Email ID">
+                    <div *ngIf="submitted && values.emailId.errors" class="text-danger">
+                        <div *ngIf="values.emailId.errors.required">
+                          Email ID is required
+                        </div>
+                        <div *ngIf="values.emailId.errors.maxlength">
+                          Maximum Length is 30.
+                        </div>
+                        <div *ngIf="values.emailId.errors.pattern">
+                            Invalid email.
+                        </div>
+
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Phone Number</label>
+                    <input type="tel" formControlName="phoneNumber" maxlength="15" minlength="6" placeholder="Phone Number" (keypress)="numberOnly($event)">
+                    <div *ngIf="submitted && values.phoneNumber.errors" class="text-danger">
+                        <div *ngIf="values.phoneNumber.errors.required">
+                          Phone Number is required
+                        </div>
+                        <div *ngIf="values.phoneNumber.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="values.phoneNumber.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" minlength="6" maxlength="15" placeholder="Password" (keypress)="alphaNumericOnly($event)">
+                    <div *ngIf="submitted && values.password.errors" class="text-danger">
+                        <div *ngIf="values.password.errors.required">
+                          Password is required
+                        </div>
+                        <div *ngIf= "values.password.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="values.password.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="values.password.errors.pattern">
+                          Invalid Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Confirm Password</label>
+                    <input type="password" formControlName="confirmPassword" minlength="6" maxlength="15" placeholder="Confirm Password" (keypress)="alphaNumericOnly($event)">
+                    <div *ngIf="submitted && values.confirmPassword.errors" class="text-danger">
+                        <div *ngIf="values.confirmPassword.errors.required">
+                          Confirm Password is required
+                        </div>
+                        <div *ngIf="values.confirmPassword.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="values.confirmPassword.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="values.confirmPassword.errors.pattern">
+                            Invalid Confirm Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12 mb-5">
+                    <div class="d-flex justify-content-start no-gutters">
+                        <div>
+                            <label class="check-container">Agree to the Terms & Conditions of Illud
+                                <input type="checkbox" (change)="toggleEditable($event)"> 
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button class="sq-btn" type="submit">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+<button type="button" id="hbtn" style="display: none;" (click)="openModal(accountverify,'accountverify-modal')"></button>
+
+<!-- Login modal -->
+<ng-template #login let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="d-flex align-items-start justify-content-between">
+            <div>
+                <h3>Let's get started</h3>
+                <p>Login & book your iWorker now.</p>
+            </div>
+            <div>
+                <a href="javascript:void(0)" (click)="openModal(signup, 'signup-modal')">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)= "loginSubmit()">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Email</label>
+                    <input type="text" formControlName="EmailId" maxlength="30" placeholder="Email ID">
+                    <div *ngIf="submitted && loginvalue.EmailId.errors" class="text-danger">
+                        <div *ngIf="loginvalue.EmailId.errors.required">
+                          Email ID is required
+                        </div>
+                        <div *ngIf="loginvalue.EmailId.errors.maxlength">
+                          Maximum Length is 30.
+                        </div>
+                        <div *ngIf="loginvalue.EmailId.errors.pattern">
+                            Invalid email.
+                        </div>
+
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" minlength="6" maxlength="15" placeholder="Password" (keypress)="alphaNumericOnly($event)">
+                    <div *ngIf="submitted && loginvalue.password.errors" class="text-danger">
+                        <div *ngIf="loginvalue.password.errors.required">
+                          Password is required
+                        </div>
+                        <div *ngIf= "loginvalue.password.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="loginvalue.password.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="loginvalue.password.errors.pattern">
+                          Invalid Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="d-flex justify-content-between align-items-center no-gutters">
+                        <div>
+                            <label class="check-container"> Keep me Logged In.
+                                <input type="checkbox" (change)="toggleEditable($event)">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <p class="mb-0 forgot" (click)="openModal(forgetpasswd, 'forgetpasswd-modal')">Forgot ?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 text-center">
+                            <button type="submit" class="sq-btn">Login</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="or text-center">
+                        <p>or</p>
+                    </div>
+                </div>
+                <!-- <div class="col-md-12 facebook">
+                    <button class="w-100" (click)="signInWithFB()">
+                        <img src="assets/images/svg/facebook-logo.svg" class="img-fluid" /> Continue with
+                        Facebook
+                    </button>
+                </div>
+                <div class="col-md-12 google">
+                    <button class="w-100" (click)="signInWithGoogle()">
+                        <img src="assets/images/svg/google-logo.svg" class="img-fluid" /> Continue with
+                        Google
+                    </button>
+                </div> -->
+            </div>
+        </form>
+        <div class="col-md-12 facebook">
+                    <button class="w-100" (click)="signInWithFB()">
+                        <img src="assets/images/svg/facebook-logo.svg" class="img-fluid" /> Continue with
+                        Facebook
+                    </button>
+                </div>
+                <div class="col-md-12 google">
+                    <button class="w-100" (click)="signInWithGoogle()">
+                        <img src="assets/images/svg/google-logo.svg" class="img-fluid" /> Continue with
+                        Google
+                    </button>
+                </div>
+    </div>
+</ng-template>
+
+<!-- Forget Password modal -->
+<ng-template #forgetpasswd let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="text-center">
+            <img src="assets/images/svg/logo.svg" class="img-fluid logo" />
+            <h3>Forgot Password?</h3>
+            <p>Please enter the email address or mobile phone number
+                associated with your account.</p>
+        </div>
+        <form [formGroup]="forgotForm" (ngSubmit)= "forgotSubmit()">
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" placeholder="Email Address" maxlength="30" formControlName="emailAddress">
+                    <div *ngIf="submitted && forgotvalue.emailAddress.errors" class="text-danger">
+                        <div *ngIf="forgotvalue.emailAddress.errors.required">
+                          Email ID is required
+                        </div>
+                        <div *ngIf="forgotvalue.emailAddress.errors.maxlength">
+                          Maximum Length is 30.
+                        </div>
+                        <div *ngIf="forgotvalue.emailAddress.errors.pattern">
+                            Invalid email.
+                        </div>
+
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <!-- <button class="sq-btn" type="submit"
+                                (click)="openModal(confirmpasswd, 'confirmpasswd-modal')">Continue</button> -->
+                                <!-- (click)="openModal(accountverify,'accountverify-modal')" -->
+                            <button class="sq-btn" type="submit"
+                                >Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+<button type="button" id="hbtn1" style="display: none;" (click)="openModal(accountverifypass,'accountverify-modal')"></button>
+
+
+<!-- Confirm Password modal -->
+<ng-template #confirmpasswd let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="text-center">
+            <img src="assets/images/svg/logo.svg" class="img-fluid logo" />
+            <h3>Forgot Password?</h3>
+            <p>You have successfully verified your account. Please provide new password for your account.</p>
+        </div>
+        <form [formGroup]="confirmPassForm" (ngSubmit)= "confirmPassSubmit()">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>New Password</label>
+                    <input type="text" formControlName="newPassword" minlength="6" maxlength="15" placeholder="New Password">
+                    <div *ngIf="submitted && confirmpassvalue.newPassword.errors" class="text-danger">
+                        <div *ngIf="confirmpassvalue.newPassword.errors.required">
+                          Password is required
+                        </div>
+                        <div *ngIf= "confirmpassvalue.newPassword.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="confirmpassvalue.newPassword.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="confirmpassvalue.newPassword.errors.pattern">
+                          Invalid Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Confirm Password</label>
+                    <input type="text" formControlName="confirmPassword" minlength="6" maxlength="15" placeholder=" Confirm New Password">
+                    <div *ngIf="submitted && confirmpassvalue.confirmPassword.errors" class="text-danger">
+                        <div *ngIf="confirmpassvalue.confirmPassword.errors.required">
+                          Confirm Password is required
+                        </div>
+                        <div *ngIf="confirmpassvalue.confirmPassword.errors.minlength">
+                            Minimum Length is 6.
+                        </div>
+                        <div *ngIf="confirmpassvalue.confirmPassword.errors.maxlength">
+                          Maximum Length is 15.
+                        </div>
+                        <div *ngIf="confirmpassvalue.confirmPassword.errors.pattern">
+                            Invalid Confirm Password
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <!-- <button class="sq-btn" type="submit"
+                                (click)="openModal(accountverify,'accountverify-modal')">Continue</button> -->
+                                <button class="sq-btn" type="submit"
+                                >Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<!-- Account Verify modal for signup -->
+<ng-template #accountverify let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="text-center">
+            <img src="assets/images/svg/logo.svg" class="img-fluid logo" />
+            <h3>Account Verification</h3>
+            <p>Please verify your account by entering the verification code we have sent on arvind****@gmail.com or +91
+                ****0123</p>
+        </div>
+        <form>
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <div class="row">
+                        <!-- <div class="col-md-3">
+                            <input type="text">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text">
+                        </div> -->
+                        <div>
+                            <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="config"></ng-otp-input>
+                            <div *ngIf="optflag" class="text-danger"> Otp is required</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between no-gutters mb-5">
+                        <div><a class="time" href="javascript:void(0)">00:{{timeLeft}}</a></div>
+                        <div><a href="javascript:void(0)" (click)="resendCode()" >Resend Code</a></div>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button class="sq-btn" type="button" (click)="verifyotp()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+
+<!-- Account Verify modal  for password-->
+<ng-template #accountverifypass let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="text-center">
+            <img src="assets/images/svg/logo.svg" class="img-fluid logo" />
+            <h3>Account Verification</h3>
+            <p>Please verify your account by entering the verification code we have sent on arvind****@gmail.com or +91
+                ****0123</p>
+        </div>
+        <form>
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="config"></ng-otp-input>
+                            <div *ngIf="optflag" class="text-danger"> Otp is required</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between no-gutters mb-5">
+                        <div><a class="time" href="javascript:void(0)">00:{{timeLeft}}</a></div>
+                        <div><a href="javascript:void(0)" (click)="resendpassword()" >Resend Code</a></div>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button class="sq-btn" type="button" (click)="verifyforgototp()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+<button type="button" id="hbtn2" style="display: none;" (click)="openModal(confirmpasswd, 'confirmpasswd-modal')"></button>

@@ -1,0 +1,154 @@
+@import "../../../../styles.scss";
+
+.new-service {
+  padding: 0px 0 90px;
+
+  .green-bg {
+    background-color: $primary-color;
+    margin-bottom: 50px;
+
+    h3 {
+      padding-top: 60px;
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 50px;
+      letter-spacing: 0.6px;
+      color: $white-color;
+      font-family: "AvenirLTStd-Book";
+    }
+
+    label {
+      color: $white-color;
+    }
+
+    select {
+      border: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  select {
+    //margin-bottom: 90px;
+    // border: 1px solid $place-color !important;
+    background-color: $white-color !important;
+    // margin-bottom: 90px;
+  }
+
+  .space {
+    hr {
+      margin-bottom: 40px;
+    }
+  }
+
+  .time-carousel {
+    .time {
+      border-radius: 21px;
+      border: solid 1px #707070;
+      padding: 35px 23px 25px;
+      min-height: 300px;
+
+      .time-stamp {
+        border-radius: 5px;
+        border: solid 1.5px #858585;
+        padding: 8px;
+        text-align: center;
+        background-color: $white-color;
+        margin-bottom: 18px;
+
+        p {
+          font-family: "AvenirLTStd-Book";
+          font-size: 15px;
+          font-weight: 500;
+          color: #858585;
+          margin: 0;
+        }
+
+        &:focus {
+          border: solid 1.5px $primary-color;
+          outline: none;
+
+          p {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .ui-carousel-content {
+      .ui-carousel-dots-container {
+        display: none !important;
+      }
+    }
+  }
+
+  .time-picker {
+    margin-bottom: 60px;
+
+    label {
+      margin: 0;
+    }
+  }
+}
+
+// @media (max-width: 1218px) {
+//   .time-carousel {
+//     .time {
+//       border-radius: 21px;
+//       border: solid 1px #707070;
+//       padding: 35px 10px 25px !important;
+//       min-height: 300px;
+//     }
+//   }
+// }
+// @media (max-width: 1156px) {
+//   .time-carousel {
+//     .time {
+//       padding: 50px 10px 0px !important;
+//       .time-stamp {
+//         padding: 7px !important;
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 1124px) {
+//   .time-carousel {
+//     .time {
+//       .time-stamp {
+//         p {
+//           font-size: 13px !important;
+//         }
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 1079px) {
+//   .time-carousel {
+//     .time {
+//       .time-stamp {
+//         p {
+//           font-size: 12px !important;
+//         }
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 1047px) {
+//   .time-carousel {
+//     .time {
+//       .time-stamp {
+//         p {
+//           font-size: 11px !important;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@media (max-width: 500px) {
+  .new-service {
+    .calender {
+      max-width: 450px;
+      overflow-x: scroll;
+    }
+  }
+}

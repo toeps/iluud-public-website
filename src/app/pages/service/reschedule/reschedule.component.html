@@ -1,0 +1,121 @@
+<section class="res">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row align-items-center heading no-gutters">
+                <div class="col-lg-2 col-md-3 col-sm-4  col-5">
+                    <div class="row no-gutters align-items-center back-btn justify-content-center"
+                        [routerLink]="['/user']" routerLinkActive="router-link-active">
+                        <div>
+                            <img src="assets/images/svg/back-arrow.svg" class="img-fluid" />
+                        </div>
+                        <div>
+                            <h3>Back</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <form> -->
+                <form [formGroup]="rescheduleForm" (ngSubmit)= "reschedule()">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Reschedule Service</h1>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Sub Category</label>
+                        <select>
+                            <option>Indoor</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Service</label>
+                        <select formControlName="service">
+                            <option>Household</option>
+                            <div *ngIf="submitted && values.service.errors" class="text-danger">
+                                <div *ngIf="values.service.errors.required">
+                                  Service is required
+                                </div>
+                              </div>
+                        </select>
+                    </div>
+                </div>
+            <!-- </form> -->
+            <!-- <form> -->
+                <div class="row">
+                    <div class="col-md-12 text-center mb-4">
+                        <h4>For when would you like to reschedule your IWorker?</h4>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 col-md-12 col-sm-12 calender mb-2">
+                                <label>Booking Date</label>
+                                <p-calendar [touchUI]="true" [readonlyInput]="true" [showIcon]="true"
+                                    icon="pi pi-calendar" formControlName="BookingDate"> 
+                                </p-calendar>
+                                <div *ngIf="submitted && values.BookingDate.errors" class="text-danger">
+                                    <div *ngIf="values.BookingDate.errors.required">
+                                      Booking Date is required
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-2 timepicker">
+                                <label>Start Time Of Service</label>
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 col-sm-6 col-6">
+                                        <ngb-timepicker [spinners]="false" class="" formControlName="startTime"></ngb-timepicker>
+                                          <div *ngIf="submitted && values.startTime.errors" class="text-danger">
+                                            <div *ngIf="values.startTime.errors.required">
+                                              Start Time is required
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-6  col-sm-6 col-6">
+                                        <select class="m-0">
+                                            <option>AM</option>
+                                            <option>PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-2 timepicker">
+                                <label>End Time Of Service</label>
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 col-sm-6 col-6">
+                                        <ngb-timepicker [spinners]="false" class="" formControlName="endTime"></ngb-timepicker>
+                                        <div *ngIf="submitted && values.endTime.errors" class="text-danger">
+                                          <div *ngIf="values.endTime.errors.required">
+                                            End Time is required
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-6">
+                                        <select class="m-0">
+                                            <option>AM</option>
+                                            <option>PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label>Reason</label>
+                        <textarea formControlName="reason" placeholder="Reason For Reschedule" maxlength="1000"></textarea>
+                        <div *ngIf="submitted && values.reason.errors" class="text-danger">
+                            <div *ngIf="values.reason.errors.maxlength">
+                              Reason maximum length is 1000
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            <!-- </form> -->
+
+            <div class="row justify-content-center no-gutters">
+                <div class="col-md-2 text-right">
+                    <button type="submit" class="green-btn w-100">Reschedule</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</section>

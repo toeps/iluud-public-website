@@ -1,0 +1,141 @@
+<section class="completed">
+    <div class="container-outer">
+        <div class="container-inner">
+            <div class="row align-items-center heading">
+                <div class="col-md-1 col-sm-2 col-2">
+                    <div>
+                        <img src="assets/images/svg/completed.svg" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-10 col-10 text-left">
+                    <h4 class="mb-0">*Your service has been completed</h4>
+                </div>
+            </div>
+            <div class="row justify-content-between mb-0">
+                <div class="col-md-5 card-outer" *ngFor="let summary of summarydetail">
+                    <div class="service-card">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-md-6">
+                                <label>Worker Name</label>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <p>{{summary.uname}}</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-md-6">
+                                <label>Service Time</label>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <p>{{summary.serviceHrs}}</p>
+                            </div>
+                        </div>
+                        <div class="row no-gutters align-items-center justify-content-between">
+                            <div class="col-md-6">
+                                <label>Sub Category</label>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <p>{{summary.subCat}}</p>
+                            </div>
+                        </div>
+                        <div class="row no-gutters align-items-center justify-content-between">
+                            <div class="col-md-6">
+                                <label>Services</label>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <p>{{summary.serviceName}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center">
+                                <button type="button" class="green-btn">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="user-card">
+                        <div class="row text-center flex-wrap justify-content-around">
+                            <div class="col-lg-2 col-md-4">
+                                <h2>{{bookingData?.client_name}}</h2>
+                                <h6>Name</h6>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <h2>{{bookingData?.subcatgeory}}</h2>
+                                <h6>Subcategory</h6>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <h2>{{bookingData?.city}}</h2>
+                                <h6>Location</h6>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <h2>{{bookingData?.show_booking_date}}</h2>
+                                <h6>Booking Date</h6>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <h2>{{bookingData?.client_contact}}</h2>
+                                <h6>Mobile Number</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 text-right">
+                    <button type="button" class="sq-btn mb-3" [routerLink]="['/service/payment']"
+                        routerLinkActive="router-link-active">Make Payment</button>
+                </div>
+                <div class=" text-center">
+                    <button type="button" class="sq-btn" (click)="openVerticallyCentered(content)">Add More
+                        Time</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Add more time modal -->
+<ng-template #content let-modal>
+    <div class="modal-body">
+        <button type="button" class="btn close" (click)="modal.close('Close click')">
+            <img src="assets/images/svg/cancel.svg" class="img-fluid" />
+        </button>
+        <div class="text-center">
+            <h3>Service not completed</h3>
+            <p class="text-left">Add Time</p>
+        </div>
+        <div class="row align-items-center justify-content-between mb-5">
+            <div class="col-md-7">
+                <div class="row align-items-center">
+                    <div class="col-4 mb-2 text-center">
+                        <img src="assets/images/svg/minus.svg" (click)="clickMinus()" class="counter" />
+                    </div>
+                    <div class="col-3 mb-2 text-center">
+                        <input type="text" [value]= val />
+                    </div>
+                    <div class="col-4 mb-2 text-center">
+                        <img src="assets/images/svg/plus.svg" (click)="clickPlus()" class="counter" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 mb-2">
+                <div>Minutes</div>
+                <!-- <select>
+                    <option>Min</option>
+                    <option>Hrs</option>
+                </select> -->
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-9">
+                <button type="submit" class="sq-btn w-100 p-3" (click)="AddMoreTime()" >Confirm</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

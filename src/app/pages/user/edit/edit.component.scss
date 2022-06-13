@@ -1,0 +1,52 @@
+@import "../../../../styles.scss";
+
+.edit-profile{
+    padding: 56px 0;
+    .edit-profile-sec{
+padding-left: 30px;
+.p-img{
+    position: relative;
+    width: 105px;
+    height: 106px;
+    border: solid 3px #f9c957;
+    border-radius: 50%;
+}
+.cam-img{
+        position: absolute;
+        left: 110px;
+        top: 60px;
+        width: 50px;
+}
+.profile-name{
+    padding-top: 30px;
+    font-family: $abold;
+}
+    }
+    label{
+        text-align: left;
+        color: #303030;
+    }
+
+
+    .save-btn{
+        margin-top: 50px;
+    }
+    .pay-text{
+        color: #34c3bd !important;
+        font-family: $amedium;
+    }
+}
+
+
+@media(max-width: 768px){
+    .edit-profile{
+    .save-btn{
+        margin-top: 30px;}
+    }
+}
+@media(max-width: 578px){
+    .edit-profile{
+    .save-btn{
+        margin-top: 20px;
+    } }
+}

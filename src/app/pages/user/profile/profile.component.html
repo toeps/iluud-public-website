@@ -1,0 +1,113 @@
+<!-- <app-howitworks></app-howitworks> -->
+
+    <section class="profile" >
+        <div class="container-outer">
+            <div class="container-inner">
+                <div class="profile-card">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class=" mb-3">
+                            <img bind-src="(profileImg)? (profileImg):'assets/images/png/profile.png'" class="img-fluid profile-img">
+                        </div>
+                    </div>
+                        <div class="col-md-7">
+                            <div class="row mb-0">
+                                
+                                <!-- <div class="col-lg-5 col-md-6 col-12 card-outer" *ngFor="let profile of profildetail"> -->
+                                    <div class="col-lg-12 col-md-12 col-12 card-outer">
+                                 
+                                        <div class="row mb-20 mt-md-5 mt-3 no-gutters  d-flex  justify-content-between">
+                                            <div class="col-md-4 col-sm-6 col-6">
+                                                <label>First Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-6 ">
+                                                 <p>{{firstName}}</p> 
+                                             
+                                            </div>
+                                        </div>
+                                        <div class="row mb-20 no-gutters d-flex   justify-content-between">
+                                            <div class="col-md-4 col-sm-6 col-6">
+                                                <label> Last Name </label>
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-6 ">
+                                                <p>{{lastName}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-20 no-gutters d-flex   justify-content-between">
+                                            <div class="col-md-4 col-sm-6 col-6">
+                                                <label>Contact Number</label>
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-6 ">
+                                                <p>{{contactNo}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-20 no-gutters  justify-content-between">
+                                            <div class="col-md-4 col-sm-6 col-6">
+                                                <label>Email Address</label>
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-6 ">
+                                                <p>{{emailAddress}}</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row mb-20 no-gutters  justify-content-between">
+                                            <div class="col-md-4 col-sm-6 col-6">
+                                                <label> Address</label>
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-6 ">
+                                                <p>{{profile.address}}</p>
+                                            </div>
+                                        </div> -->
+                                        <div class="row mb-20 no-gutters  justify-content-between">
+                                            <div class="col-md-4 col-sm-6 col-6">
+                                                <label> Password</label>
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-6 ">
+                                                <p>{{password}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-20 no-gutters  justify-content-between">
+                                            <div class="col-md-4 col-sm-6 col-6">
+                                                <label> Payment</label>
+                                            </div>
+                                            <div class="col-md-8 col-sm-6 col-6 ">
+                                                <p class="pay-text">updated Payment Method</p>
+                                            </div>
+                                        </div>
+                                        <div class="row no-gutters  justify-content-start">
+                                            <div class="col-lg-8 col-md-8 offset-md-1 col-sm-10 col-10 edit-btn">
+                                                <button type="button" [routerLink]="['/user/edit']" routerLinkActive="router-link-active"  class="sq-btn">Edit Profile</button>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 offset-md-1 col-sm-10 col-10 edit-btn">
+                                                <button type="button" class="sq-btn" (click)="openpopup(content)">Logout</button>
+                                            </div>
+                                        </div>
+                                     
+                                      
+                                    </div>
+                                </div>
+                            </div>                       
+                    </div>
+                 
+                </div>
+                </div>
+        </div>
+
+
+</section>
+
+<ng-template #content let-modal>
+    <!-- <div class="modal-header popup-center logout">
+      <h4 class="modal-title text-center" id="modal-basic-title">{{'Logout'}}</h4>
+    </div> -->
+    <div class="modal-body text-center">
+      <div class="form-group mt-4">
+        <label class="position-static">{{'Are you sure you want to logout ?'}}</label>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn cancel-btn btn-outline mr-3"
+          (click)="modal.close('Close click')">{{'Cancel'}}</button>
+        <button type="button" class="btn cancel-btn btn-outline mr-3" (click)="logout()">{{'Logout'}}</button>
+      </div>
+    </div>
+  </ng-template>

@@ -1,0 +1,49 @@
+@import "../../../styles.scss";
+
+header {
+  // height: 100px;
+  background-color: $white-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  .logo {
+    padding: 20px 0;
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+  .nav-links {
+    div {
+      margin-right: 65px;
+      // font-family: "abeatbyKai";
+      font-family: $amedium;
+      font-size: 18px;
+      &:last-child {
+        margin-right: 0;
+      }
+      button {
+        border: 0;
+        background-color: inherit;
+      }
+    }
+  }
+  .link {
+    padding: 30px 0 20px;
+    cursor: pointer;
+    border-bottom:solid 1px #7070705e;
+    &:hover {
+      outline: none;
+      border: 0;
+      border-bottom:solid 1px #f9c957;
+      svg {
+        fill: #f9c957;
+      }
+      h6 {
+        color: #f9c957;
+      }
+    }
+  }
+}
